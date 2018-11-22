@@ -1,0 +1,125 @@
+.section--page-teaser{
+  .row{
+    position: relative;
+    .page-teaser{
+      position: relative;
+    }
+  }
+  &--odd{
+    .refcase__image,.page-teaser__image{
+      img{
+        width:100%;
+      }
+      text-align: right;
+      &:before{
+        @include anim(0.5s);
+        content: "";
+        width: 300px;
+        height: 200px;
+        position: absolute;
+        background-color: $contribute-main;
+        top: 150px;
+        left: 0;
+        z-index: -1;
+      }
+      &:hover:before{
+        left:-30px;
+      }
+    }
+  }
+  &--even{
+    .refcase__image,.page-teaser__image{
+      img{
+        width:100%;
+      }
+      text-align: right;
+      &:before{
+        @include anim(0.5s);
+        content: "";
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        background-color: #e33a3b;
+        top: 100px;
+        right: 100px;
+        z-index: -1;
+      }
+      &:hover:before{
+        top: 120px;
+        right: 120px;
+      }
+    }
+    
+    .refcase{
+      &__image{
+        figure{
+          //width: 75%;
+          display: inline-block;
+        }
+      }
+         
+    }
+    .testimonial--teaser{
+      position: absolute;
+      top: 10%;
+      width: 40%;
+      left: 0;
+    }
+  }
+  .refcase,.testimonial--teaser{
+    &__image{
+      figure{
+        @include anim(0.3s);
+        position: relative;
+        overflow: hidden;
+        &:hover{
+          transform: scale(1.05);
+          z-index:9;
+          .refcase__pre-title{
+            opacity: 0;
+          }
+          .refcase__info,.testimonial--teaser__info{
+            bottom: 0;
+            
+          }
+        }
+        &:before{
+          @include anim(0.3s);
+          content:"";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+        }
+        &:hover:before{
+          content:"";
+          background: rgba(255,255,255,0.8);
+          
+        }
+        img{
+          width: 100%;
+        }
+        .refcase__pre-title{
+          color: white;
+          position: absolute;
+          bottom: 20px;
+          right: 20px;
+          opacity: 1;
+          font-weight: 900;
+          font-size: 1.5rem;
+          @include anim(0.5s);
+        }
+        .refcase__title{
+          font-weight: 900;
+        }
+        .refcase__info,.testimonial--teaser__info{
+          @include anim(0.3s);
+          position: absolute;
+          bottom: -100%;
+          padding: 20px;
+          width: 100%;
+        }
+      }
+    }
+  }
+  
+}

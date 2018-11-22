@@ -1,0 +1,12 @@
+footer {
+    .section--footer {
+        margin-bottom: 0px;
+        background: linear-gradient(90deg, $footer-dark 50%, $footer-light 50%);
+
+        .footer {
+            color: $footer-text;
+            padding-top: 3.125em;
+            padding-bottom: 1.5em;
+        }
+    }
+}

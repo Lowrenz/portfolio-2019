@@ -1,0 +1,38 @@
+{
+    "dist": {
+        "all":      "dist/**/**",
+        "js":       "dist/js",
+        "css":      "dist/css",
+        "img":      "dist/img",
+        "fonts":    "dist/fonts"
+    },
+    "src": {
+        "appJs": [
+            "src/js/app.js"
+        ],
+        "vendorJs": [
+            "node_modules/foundation-sites/dist/js/foundation.min.js"
+        ],
+        "sassPath": [
+            "src/sass/**/*.scss"
+        ],
+        "sassFile": [
+            "src/sass/config.scss"
+        ],
+        "img": [
+            "src/img/**/*"
+        ],
+        "php": [ 
+            "**/*.php", 
+            "*.php" 
+        ],
+        "fonts": [
+            "src/fonts/*.ttf",
+            "src/fonts/*.otf",
+            "src/fonts/*.woff",
+            "src/fonts/*.woff2",
+            "src/fonts/*.eot",
+            "src/fonts/*.svg"
+        ]
+    }
+}

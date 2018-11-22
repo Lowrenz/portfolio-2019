@@ -1,0 +1,343 @@
+/*==========================================================================
+  Base styles and utility classes
+  ==========================================================================*/
+
+body {
+    overflow-x: hidden;
+    background-size: 16.7%;
+    background-position: 0.9375rem 0;
+    background-image: linear-gradient(to left, #EEE 1px, transparent 1px);
+    letter-spacing: 1.2px;
+}
+
+body.lock {
+    overflow: hidden;
+}
+
+.fullpage {
+    height: 100vh;
+    width: 100vw;
+}
+
+h1 {
+    line-height: 1.2;
+}
+
+img {
+    max-width: 100%;
+}
+
+address {
+    font-style: normal;
+
+    p {
+        margin-bottom: 0px;
+        line-height: 2em;
+    }
+}
+
+blockquote {
+    background: $contribute-grey;
+    color: black;
+    position: relative;
+    border: none;
+    padding: 50px;
+    padding-left: 70px;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 50px;
+        height: calc(100% - 100px);
+        left: 40px;
+        border-left: 9px solid $contribute-dark-grey;
+    }
+
+    p {
+        color: black;
+    }
+}
+
+.browserupgrade {
+    background: map-get($foundation-palette, warning);
+    color: $white;
+    margin: 0.2em 0;
+    padding: 0.2em 0;
+}
+
+p {
+    font-size: 1.0625em;
+    font-family: $body-font-family;
+    line-height: 2.125em;
+    letter-spacing: 1.5px;
+}
+
+.site-logo {
+    width: 200px;
+}
+
+.white {
+    background: white;
+}
+
+.back-to-overview {
+    //margin-top: 50px;
+    margin-top: 100px;
+
+    .link-wrapper-blog {
+        //padding: 50px;
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        z-index: 2;
+        height: 150px;
+        line-height: 162px;
+        margin-bottom: 30px;
+        margin-top: 30px;
+        box-sizing: border-box;
+        cursor: pointer;
+        box-shadow: inset 0 0 0 1px $contribute-dark-grey;
+
+        &:hover {
+            .link {
+                &--marker,
+                &--marker-red {
+                    position: relative;
+                    overflow: hidden;
+                    z-index: 2;
+                    line-height: 1em;
+                    padding: 0px 2px;
+                    font-weight: 900;
+                    display: inline-block;
+
+                    &:before,
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        width: 100%;
+                        height: 45%;
+                        background-color: $marker-background;
+                        bottom: 0%;
+                        left: 0;
+                        z-index: -2;
+
+                        @include anim(0.5s);
+                    }
+
+                    &:before {
+                        background-color: $contribute-main;
+                        bottom: 0%;
+                        z-index: -1;
+                    }
+
+                    &:hover:before {
+                        bottom: 0%;
+                    }
+
+                    &:hover {
+                        color: $menu-color-active;
+                    }
+                }
+
+                &--marker-red {
+                    &:after {
+                        background-color: $contribute-main-dark;
+                    }
+
+                    &:before {
+                        background-color: $contribute-main;
+                    }
+                }
+            }
+        }
+
+        &.overzicht {
+            &:hover {
+                &:before {
+                    content: '';
+                    box-shadow: inset 0 0 0 1px $contribute-dark-grey;
+                    position: absolute;
+                    width: 100%;
+                    max-width: 400px;
+                    height: 100%;
+                    top: 15px;
+                    left: -15px;
+                    opacity: 1;
+
+                    @include anim(1s);
+                }
+            }
+
+            &:before {
+                content: '';
+                box-shadow: inset 0 0 0 1px $contribute-dark-grey;
+                position: absolute;
+                opacity: 0;
+                width: 100%;
+                max-width: 400px;
+                height: 100%;
+                z-index: 1;
+                top: 0;
+                left: 0;
+
+                @include anim(0.5s);
+            }
+
+            &:after {
+                content: '';
+                box-shadow: inset 0 0 0 1px $contribute-dark-grey;
+                position: absolute;
+                width: 100%;
+                max-width: 400px;
+                height: 100%;
+                z-index: -1;
+                top: 0;
+                left: 0;
+                opacity: 0;
+
+                @include anim(1s);
+            }
+
+            &:hover {
+                &:after {
+                    content: '';
+                    box-shadow: inset 0 0 0 1px $contribute-main;
+                    position: absolute;
+                    width: 100%;
+                    max-width: 400px;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    opacity: 1;
+
+                    @include anim(1s);
+                }
+            }
+
+            img {
+                pointer-events: none;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                object-fit: cover;
+            }
+        }
+
+        &.aanpak {
+            &:hover {
+                &:before {
+                    content: '';
+                    box-shadow: inset 0 0 0 1px $contribute-dark-grey;
+                    position: absolute;
+                    width: 100%;
+                    max-width: 400px;
+                    height: 100%;
+                    top: 15px;
+                    left: 15px;
+                    opacity: 1;
+
+                    @include anim(1s);
+                }
+            }
+
+            &:before {
+                content: '';
+                box-shadow: inset 0 0 0 1px $contribute-dark-grey;
+                position: absolute;
+                opacity: 0;
+                width: 100%;
+                max-width: 400px;
+                height: 100%;
+                z-index: 1;
+                top: 0;
+                left: 0;
+
+                @include anim(0.5s);
+            }
+
+            &:after {
+                content: '';
+                box-shadow: inset 0 0 0 1px $contribute-dark-grey;
+                position: absolute;
+                width: 100%;
+                max-width: 400px;
+                height: 100%;
+                z-index: -1;
+                top: 0;
+                left: 0;
+                opacity: 0;
+
+                @include anim(1s);
+            }
+
+            &:hover {
+                &:after {
+                    content: '';
+                    box-shadow: inset 0 0 0 1px $contribute-main;
+                    position: absolute;
+                    width: 100%;
+                    max-width: 400px;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    opacity: 1;
+
+                    @include anim(1s);
+                }
+            }
+
+            img {
+                pointer-events: none;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+.post-edit-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    padding: 5px 10px;
+    background-color: $contribute-main;
+    z-index: 5;
+
+    &:hover,
+    &:active,
+    &:visited {
+        color: white;
+        text-decoration: none;
+    }
+}
+
+.relative {
+    position: relative;
+}
+
+.loader {
+    color: #cccccc;
+    font-size: 90px;
+    text-indent: -9999em;
+    overflow: hidden;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    margin: 72px auto;
+    position: relative;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+    animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+}

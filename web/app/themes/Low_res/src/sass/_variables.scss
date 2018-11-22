@@ -1,0 +1,61 @@
+/*==========================================================================
+  Foundation Overrides
+  ==========================================================================*/
+
+$foundation-palette: (
+  primary:    #1779ba,
+  secondary:  #767676,
+  success:    #3adb76,
+  warning:    #ffae00,
+  alert:      #cc4b37,
+);
+
+$global-flexbox: true;
+$xy-grid: false;
+
+$ailerons-font-path: "../fonts/";
+$ailerons-font-name: "Ailerons-Typeface";
+$ailerons-font-family: "Ailerons";
+$ailerons-font-file: $ailerons-font-path + $ailerons-font-name;
+
+@font-face {
+  font-family: $ailerons-font-family;
+  font-style: normal;
+  font-weight: 400;
+  src: url('#{$ailerons-font-file}.eot'); /* For IE6-8 */
+  src: local($ailerons-font-family),
+       local($ailerons-font-name),
+       url('#{$ailerons-font-file}.eot?#iefix') format('embedded-opentype'),
+       url('#{$ailerons-font-file}.woff2') format('woff2'),
+       url('#{$ailerons-font-file}.woff') format('woff'),
+       url('#{$ailerons-font-file}.otf') format("opentype"),
+       url('#{$ailerons-font-file}.ttf') format('truetype'),
+       url('#{$ailerons-font-file}.svg#Ailerons-Regular') format('svg');
+}
+
+$body-font-family: $ailerons-font-family ,'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+
+/*==========================================================================
+  Custom Variables
+  ==========================================================================*/
+$contribute-main: #e33a3b;
+$contribute-main-dark: #a01718;
+$contribute-grey: #f5f5f5;
+$contribute-dark-grey: #e2e2e2;
+$contribute-text-grey: #ababab;
+$contribute-text-dark-grey: #999;
+$footer-light: #3f4957;
+$footer-dark: #323a45;
+$footer-text: #ACACAC;
+$marker-background: #DCDCDC;
+$menu-color-active: #000000;
+/*==========================================================================
+  Social media colors
+  ==========================================================================*/
+
+$facebook:    #4963A1;
+$twitter:     #59ADEC;
+$instagram:   #517EA0;
+$pinterest:   #CB2026;
+$linkedin:    #187CB5;
+$google-plus: #DA4C3E;

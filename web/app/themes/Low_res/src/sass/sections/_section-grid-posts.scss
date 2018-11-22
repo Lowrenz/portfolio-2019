@@ -1,0 +1,29 @@
+.section--grid-posts{
+  .relative {
+    border: 3px solid transparent;
+  }
+  
+  .grid-posts{
+    position: relative;
+    &:after{
+      content: "";
+      bottom: -3%;
+      left: -2%;
+      background: $contribute-main;
+      width: 15%;
+      height: 15%;
+      position: absolute;
+      z-index: -1;
+    }
+    &:before{
+      content: "";
+      bottom: -2%;
+      left: -1.5%;
+      background: $contribute-grey;
+      width: 40%;
+      height: 50%;
+      position: absolute;
+      z-index: -1;
+    }
+  }
+}
