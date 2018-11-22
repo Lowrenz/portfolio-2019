@@ -1,6 +1,6 @@
 <footer>
   <section class="section section--footer">
-    <div class="row text-center">
+    <div class="row align-center text-center">
       <h4>Made with <span class="pink">❤</span> by <a class="pink" href="lorenzgillisjans.com" target="_self">Low_res</a> | &copy; <?php echo date("Y"); ?> - All rights reserved</h4>
     </div>
   </section>

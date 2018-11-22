@@ -40,8 +40,9 @@ body.lock {
     width: 100vw;
 }
 
-h1 {
+h1, .title {
     line-height: 1.2;
+    font-family: $alien-font-family
 }
 
 img {
