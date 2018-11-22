@@ -4,14 +4,35 @@
 
 body {
     overflow-x: hidden;
-    background-size: 16.7%;
-    background-position: 0.9375rem 0;
-    background-image: linear-gradient(to left, #EEE 1px, transparent 1px);
     letter-spacing: 1.2px;
+    background: url("../img/background.jpg") top center;
+    background-repeat: repeat-y;
+    background-size: 100%;
+    color: $white;
 }
 
 body.lock {
     overflow: hidden;
+}
+
+.pink{
+    color: $pink;
+
+    &-bg{
+        background-color: $pink-bg;
+    }
+}
+
+.purple{
+    color: $purple;
+
+    &-bg{
+        background-color: $purple-bg;
+    }
+}
+
+.white{
+    color: $white;
 }
 
 .fullpage {
@@ -72,238 +93,6 @@ p {
     letter-spacing: 1.5px;
 }
 
-.site-logo {
-    width: 200px;
-}
-
-.white {
-    background: white;
-}
-
-.back-to-overview {
-    //margin-top: 50px;
-    margin-top: 100px;
-
-    .link-wrapper-blog {
-        //padding: 50px;
-        display: inline-block;
-        position: relative;
-        width: 100%;
-        max-width: 400px;
-        z-index: 2;
-        height: 150px;
-        line-height: 162px;
-        margin-bottom: 30px;
-        margin-top: 30px;
-        box-sizing: border-box;
-        cursor: pointer;
-        box-shadow: inset 0 0 0 1px $contribute-dark-grey;
-
-        &:hover {
-            .link {
-                &--marker,
-                &--marker-red {
-                    position: relative;
-                    overflow: hidden;
-                    z-index: 2;
-                    line-height: 1em;
-                    padding: 0px 2px;
-                    font-weight: 900;
-                    display: inline-block;
-
-                    &:before,
-                    &:after {
-                        content: "";
-                        position: absolute;
-                        width: 100%;
-                        height: 45%;
-                        background-color: $marker-background;
-                        bottom: 0%;
-                        left: 0;
-                        z-index: -2;
-
-                        @include anim(0.5s);
-                    }
-
-                    &:before {
-                        background-color: $contribute-main;
-                        bottom: 0%;
-                        z-index: -1;
-                    }
-
-                    &:hover:before {
-                        bottom: 0%;
-                    }
-
-                    &:hover {
-                        color: $menu-color-active;
-                    }
-                }
-
-                &--marker-red {
-                    &:after {
-                        background-color: $contribute-main-dark;
-                    }
-
-                    &:before {
-                        background-color: $contribute-main;
-                    }
-                }
-            }
-        }
-
-        &.overzicht {
-            &:hover {
-                &:before {
-                    content: '';
-                    box-shadow: inset 0 0 0 1px $contribute-dark-grey;
-                    position: absolute;
-                    width: 100%;
-                    max-width: 400px;
-                    height: 100%;
-                    top: 15px;
-                    left: -15px;
-                    opacity: 1;
-
-                    @include anim(1s);
-                }
-            }
-
-            &:before {
-                content: '';
-                box-shadow: inset 0 0 0 1px $contribute-dark-grey;
-                position: absolute;
-                opacity: 0;
-                width: 100%;
-                max-width: 400px;
-                height: 100%;
-                z-index: 1;
-                top: 0;
-                left: 0;
-
-                @include anim(0.5s);
-            }
-
-            &:after {
-                content: '';
-                box-shadow: inset 0 0 0 1px $contribute-dark-grey;
-                position: absolute;
-                width: 100%;
-                max-width: 400px;
-                height: 100%;
-                z-index: -1;
-                top: 0;
-                left: 0;
-                opacity: 0;
-
-                @include anim(1s);
-            }
-
-            &:hover {
-                &:after {
-                    content: '';
-                    box-shadow: inset 0 0 0 1px $contribute-main;
-                    position: absolute;
-                    width: 100%;
-                    max-width: 400px;
-                    height: 100%;
-                    top: 0;
-                    left: 0;
-                    opacity: 1;
-
-                    @include anim(1s);
-                }
-            }
-
-            img {
-                pointer-events: none;
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-                z-index: -1;
-                object-fit: cover;
-            }
-        }
-
-        &.aanpak {
-            &:hover {
-                &:before {
-                    content: '';
-                    box-shadow: inset 0 0 0 1px $contribute-dark-grey;
-                    position: absolute;
-                    width: 100%;
-                    max-width: 400px;
-                    height: 100%;
-                    top: 15px;
-                    left: 15px;
-                    opacity: 1;
-
-                    @include anim(1s);
-                }
-            }
-
-            &:before {
-                content: '';
-                box-shadow: inset 0 0 0 1px $contribute-dark-grey;
-                position: absolute;
-                opacity: 0;
-                width: 100%;
-                max-width: 400px;
-                height: 100%;
-                z-index: 1;
-                top: 0;
-                left: 0;
-
-                @include anim(0.5s);
-            }
-
-            &:after {
-                content: '';
-                box-shadow: inset 0 0 0 1px $contribute-dark-grey;
-                position: absolute;
-                width: 100%;
-                max-width: 400px;
-                height: 100%;
-                z-index: -1;
-                top: 0;
-                left: 0;
-                opacity: 0;
-
-                @include anim(1s);
-            }
-
-            &:hover {
-                &:after {
-                    content: '';
-                    box-shadow: inset 0 0 0 1px $contribute-main;
-                    position: absolute;
-                    width: 100%;
-                    max-width: 400px;
-                    height: 100%;
-                    top: 0;
-                    left: 0;
-                    opacity: 1;
-
-                    @include anim(1s);
-                }
-            }
-
-            img {
-                pointer-events: none;
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-                z-index: -1;
-                object-fit: cover;
-            }
-        }
-    }
-}
-
 .post-edit-link {
     position: absolute;
     top: 0;
@@ -323,6 +112,10 @@ p {
 
 .relative {
     position: relative;
+}
+
+.box-shadow{
+    @include box-shadow();
 }
 
 .loader {
