@@ -6,6 +6,38 @@
     font-size: 16px;
 }
 
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px $purple-bg;
+	background-color: $purple-bg;
+}
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px $pink-bg;
+	border-radius: 10px;
+	background-color: $pink;
+}
+
+::-webkit-selection {
+    background: $pink;
+    color: $white;
+}
+
+::-moz-selection {
+    background: $pink;
+    color: $white;
+}
+
+::-ms-selection {
+    background: $pink;
+    color: $white;
+}
+
+::selection {
+    background: $pink;
+    color: $white;
+}
+
 .row{
     max-width: 90rem;
 }
