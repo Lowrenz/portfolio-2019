@@ -17,9 +17,8 @@ $args = array(
   <section id="about" class="section section--blocks">
     <div class="row">
     <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-      <div class="small-12 columns">
-        <?php the_title( '<h2 class="title title--stripe banner__title">', '</h2>' );  ?>
-        <?php the_content(); ?>
+      <div class="small-12 columns pink-bg box-shadow box">
+        <p><?php the_content(); ?></p>
       </div>
       <?php endwhile; else: ?> <p>Sorry, there are no blocks to display</p> <?php endif; ?>
       <?php wp_reset_query(); ?>

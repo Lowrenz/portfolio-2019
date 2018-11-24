@@ -2,6 +2,14 @@
   Base styles and utility classes
   ==========================================================================*/
 
+:root {
+    font-size: 16px;
+}
+
+.row{
+    max-width: 90rem;
+}
+
 body {
     overflow-x: hidden;
     letter-spacing: 1.2px;
@@ -9,6 +17,7 @@ body {
     background-repeat: repeat-y;
     background-size: 100%;
     color: $white;
+    padding: 40px;
 }
 
 body.lock {
@@ -40,12 +49,39 @@ body.lock {
     width: 100vw;
 }
 
+.hidden{
+    visibility: hidden;
+    width:0;
+    height:0;
+    padding:0;
+    margin:0;
+}
+
 h1, h2, h3, h4, h5, h6, p, .title {
-    line-height: 1.2;
-    font-family: $ailerons-font-family;
+    font-size: 3.5rem;
+    font-family: $body-font-family;
+
+    @media only screen and (max-width: 630px){
+        font-size: 2.8rem;
+    }
+
+    @media only screen and (max-width: 480px){
+        font-size: 2rem;
+    }
     
     @include word-wrap();
     @include text-shadow();
+}
+
+.box{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-right: 110px;
+    margin-bottom: 230px;
+
+    p{
+        margin-left: -10rem;
+    }
 }
 
 .alien{
@@ -72,16 +108,21 @@ address {
     padding: 0.2em 0;
 }
 
-p {
-    font-size: 1.0625em;
-    font-family: $body-font-family;
-    line-height: 2.125em;
-    letter-spacing: 1.5px;
+.big{
+    font-size: 10.5rem;
+
+    @media only screen and (max-width: 530px){
+        font-size: 8rem;
+    }
+
+    @media only screen and (max-width: 400px){
+        font-size: 6rem;
+    }
 }
 
 .post-edit-link {
     position: absolute;
-    top: 0;
+    top: -100px;
     right: 0;
     color: $white;
     padding: 5px 10px;

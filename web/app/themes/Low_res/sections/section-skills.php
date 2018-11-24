@@ -14,17 +14,29 @@ $args = array(
 
 ?>
 
-  <section id="skills" class="section section--skills">
-    <div class="row">
+<section id="skills" class="section section--skills">
+  <div class="row">
     <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-      <div class="small-12 columns">
-        <?php the_title( '<h2 class="title title--stripe banner__title">', '</h2>' );  ?>
-        <?php the_field('procent'); ?>
-        <?php the_content(); ?>
+    <div class="small-12 medium-6 large-3 columns chart-item">
+      <div class="title-area">
+        <h3 class="text-center align-center">
+          <?php the_title();  ?>
+        </h3>
       </div>
-      <?php endwhile; else: ?> <p>Sorry, there are no skills to display</p> <?php endif; ?>
-      <?php wp_reset_query(); ?>
-
-      <?php if(current_user_can('administrator')) edit_post_link('edit section', '<p class="edit-post">', '</p>',$page_id); ?>
+      <figure class="chart-<?php the_field('chart'); ?> animate">
+        <svg role="img" xmlns="http://www.w3.org/2000/svg">
+          <title><?php the_title();  ?></title>
+          <desc><?php the_content();  ?></desc>
+          <circle class="circle-background" />
+          <circle class="circle-foreground" />
+        </svg>
+        <figcaption><?php the_field('procent'); ?>% on <?php the_title();  ?></figcaption>
     </div>
-  </section>
+    <?php endwhile; else: ?>
+    <p>Sorry, there are no skills to display</p>
+    <?php endif; ?>
+    <?php wp_reset_query(); ?>
+
+    <?php if(current_user_can('administrator')) edit_post_link('edit section', '<p class="edit-post">', '</p>',$page_id); ?>
+  </div>
+</section>

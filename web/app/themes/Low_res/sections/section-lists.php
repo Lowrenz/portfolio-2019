@@ -14,16 +14,24 @@ $args = array(
 
 ?>
 
-  <section id="lists" class="section section--lists">
-    <div class="row">
-    <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-      <div class="small-12 columns">
-        <?php the_title( '<h2 class="title title--stripe banner__title">', '</h2>' );  ?>
-        <?php the_content(); ?>
-      </div>
-      <?php endwhile; else: ?> <p>Sorry, there are no lists to display</p> <?php endif; ?>
-      <?php wp_reset_query(); ?>
+<section id="lists" class="section section--lists">
 
-      <?php if(current_user_can('administrator')) edit_post_link('edit section', '<p class="edit-post">', '</p>',$page_id); ?>
+  <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+  <div class="row list-item">
+    <div class="small-3 columns align-self-middle">
+      <span class="material-icons pink big">done</span>
     </div>
-  </section>
+    <div class="small-9 columns align-self-middle list-text">
+      <p>
+        <?php the_title();  ?>
+      </p>
+    </div>
+  </div>
+  <?php endwhile; else: ?>
+  <p>Sorry, there are no lists to display</p>
+  <?php endif; ?>
+  <?php wp_reset_query(); ?>
+
+  <?php if(current_user_can('administrator')) edit_post_link('edit section', '<p class="edit-post">', '</p>',$page_id); ?>
+
+</section>

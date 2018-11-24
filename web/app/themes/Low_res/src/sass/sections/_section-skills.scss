@@ -1,12 +1,107 @@
 .section--skills{
-    
+    .title-area{
+		width: 100%;
+		height:auto;
+		min-height: 156px;
+		display: table;
+		
+		h3{
+			height: 100%;
+			display: table-cell;
+			vertical-align: middle;
+			font-size: 56px;
+		}
+
+		margin-bottom: 25px;
+	}
+
+	.chart-item{
+		margin-bottom: 150px;
+	}
 }
 
 
 $configs: (
 	chart-one: (
-		svgSize: 250px,
-		percentage: 32,
+		svgSize: 220px,
+		percentage: 82,
+		strokeWidth: 6px,
+		backgroundColor: #390ABA,
+		foregroundColor: #FF00CB,
+		labelColor: #FFFFFF,
+		labelFontSize: 2.5rem,
+		duration: 3s,
+		animationDelay: 1s
+	),
+	chart-two: (
+		svgSize: 220px,
+		percentage: 95,
+		strokeWidth: 6px,
+		backgroundColor: #390ABA,
+		foregroundColor: #FF00CB,
+		labelColor: #FFFFFF,
+		labelFontSize: 2.5rem,
+		duration: 3s,
+		animationDelay: 1s
+	),
+	chart-three: (
+		svgSize: 220px,
+		percentage: 100,
+		strokeWidth: 6px,
+		backgroundColor: #390ABA,
+		foregroundColor: #FF00CB,
+		labelColor: #FFFFFF,
+		labelFontSize: 2.5rem,
+		duration: 3s,
+		animationDelay: 1s
+	),
+	chart-four: (
+		svgSize: 220px,
+		percentage: 80,
+		strokeWidth: 6px,
+		backgroundColor: #390ABA,
+		foregroundColor: #FF00CB,
+		labelColor: #FFFFFF,
+		labelFontSize: 2.5rem,
+		duration: 3s,
+		animationDelay: 1s
+	),
+	chart-five: (
+		svgSize: 220px,
+		percentage: 90,
+		strokeWidth: 6px,
+		backgroundColor: #390ABA,
+		foregroundColor: #FF00CB,
+		labelColor: #FFFFFF,
+		labelFontSize: 2.5rem,
+		duration: 3s,
+		animationDelay: 1s
+	),
+	chart-six: (
+		svgSize: 220px,
+		percentage: 83,
+		strokeWidth: 6px,
+		backgroundColor: #390ABA,
+		foregroundColor: #FF00CB,
+		labelColor: #FFFFFF,
+		labelFontSize: 2.5rem,
+		duration: 3s,
+		animationDelay: 1s
+	),
+	chart-seven: (
+		svgSize: 220px,
+		percentage: 93,
+		strokeWidth: 6px,
+		backgroundColor: #390ABA,
+		foregroundColor: #FF00CB,
+		labelColor: #FFFFFF,
+		labelFontSize: 2.5rem,
+		duration: 3s,
+		animationDelay: 1s
+	),
+	chart-eight: (
+		svgSize: 220px,
+		percentage: 84,
 		strokeWidth: 6px,
 		backgroundColor: #390ABA,
 		foregroundColor: #FF00CB,
@@ -31,7 +126,7 @@ $labelData: '';
 	.#{$chart} {
 		width: map-get($param, svgSize);
 		height: map-get($param, svgSize);
-		margin: 0;
+		margin: 0px auto;
 		position: relative;
 		
 		&.animate {
