@@ -40,9 +40,16 @@ body.lock {
     width: 100vw;
 }
 
-h1, .title {
+h1, h2, h3, h4, h5, h6, p, .title {
     line-height: 1.2;
-    font-family: $alien-font-family
+    font-family: $ailerons-font-family;
+    
+    @include word-wrap();
+    @include text-shadow();
+}
+
+.alien{
+    font-family: $alien-font-family;
 }
 
 img {
@@ -55,28 +62,6 @@ address {
     p {
         margin-bottom: 0px;
         line-height: 2em;
-    }
-}
-
-blockquote {
-    background: $contribute-grey;
-    color: black;
-    position: relative;
-    border: none;
-    padding: 50px;
-    padding-left: 70px;
-
-    &:before {
-        content: "";
-        position: absolute;
-        top: 50px;
-        height: calc(100% - 100px);
-        left: 40px;
-        border-left: 9px solid $contribute-dark-grey;
-    }
-
-    p {
-        color: black;
     }
 }
 
@@ -98,10 +83,12 @@ p {
     position: absolute;
     top: 0;
     right: 0;
-    color: white;
+    color: $white;
     padding: 5px 10px;
-    background-color: $contribute-main;
+    background-color: $purple-bg;
+    border: 2px solid $pink;
     z-index: 5;
+    font-family: $alien-font-family, $body-font-family;
 
     &:hover,
     &:active,
@@ -117,6 +104,10 @@ p {
 
 .box-shadow{
     @include box-shadow();
+}
+
+.text-shadow{
+    @include text-shadow();
 }
 
 .loader {

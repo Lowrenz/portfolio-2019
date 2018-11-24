@@ -89,7 +89,15 @@
 @mixin box-shadow() {
     -webkit-box-shadow: 25px 4px 94px -6px $purple;
     -moz-box-shadow: 25px 4px 94px -6px $purple;
+    -ms-box-shadow: 25px 4px 94px -6px $purple;
     box-shadow: 25px 4px 94px -6px $purple;
+}
+
+@mixin text-shadow() {
+    -webkit-text-shadow: 3px 5px 9px rgba(0,0,0,0.7);
+    -moz-text-shadow: 3px 5px 9px rgba(0,0,0,0.7);
+    -ms-text-shadow: 3px 5px 9px rgba(0,0,0,0.7);
+    text-shadow: 3px 5px 9px rgba(0,0,0,0.7);
 }
 
 @mixin ellipsis() {
