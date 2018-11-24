@@ -17,7 +17,7 @@ $args = array(
   <section id="work" class="section section--portfolios">
     <div class="row">
     <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-      <div class="small-12 columns">
+      <div class="small-12 columns" data-aos="fade-up">
         <?php the_title( '<h2 class="title title--stripe banner__title">', '</h2>' );  ?>
         <?php the_content(); ?>
       </div>

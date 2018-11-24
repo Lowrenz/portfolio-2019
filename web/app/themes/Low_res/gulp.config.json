@@ -11,7 +11,7 @@
             "src/js/app.js"
         ],
         "vendorJs": [
-            "node_modules/foundation-sites/dist/js/foundation.min.js"
+            "node_modules/aos/dist/aos.js"
         ],
         "sassPath": [
             "src/sass/**/*.scss"

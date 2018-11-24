@@ -17,7 +17,7 @@ $args = array(
 <section id="skills" class="section section--skills">
   <div class="row">
     <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-    <div class="small-12 medium-6 large-3 columns chart-item">
+    <div class="small-12 medium-6 large-3 columns chart-item" data-aos="fade-up">
       <div class="title-area">
         <h3 class="text-center align-center">
           <?php the_title();  ?>

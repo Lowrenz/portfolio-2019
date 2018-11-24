@@ -33,6 +33,7 @@
   },
   "private": true,
   "dependencies": {
+    "aos": "^2.3.4",
     "foundation-sites": "^6.5.1",
     "material-icons": "^0.2.3"
   }

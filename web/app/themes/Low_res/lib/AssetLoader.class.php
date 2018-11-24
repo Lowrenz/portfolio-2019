@@ -27,7 +27,7 @@ class assetLoader {
     }
 
     //vendor specific javascripts
-    //wp_enqueue_script('vendor', get_template_directory_uri() . $path . "plugins.min.js", false, '1.0', true);
+    wp_enqueue_script('vendor', get_template_directory_uri() . $path . "plugins.min.js", false, '1.0', true);
 
     //load main file in footer
     wp_enqueue_script('main', get_template_directory_uri() . $path . "app.min.js", false, '1.0', true);

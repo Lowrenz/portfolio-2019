@@ -17,7 +17,7 @@ $args = array(
 <section id="lists" class="section section--lists">
 
   <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-  <div class="row list-item">
+  <div class="row list-item" data-aos="fade-up">
     <div class="small-3 columns align-self-middle">
       <span class="material-icons pink big">done</span>
     </div>

@@ -4,7 +4,7 @@
 */
 $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 ?>
-<section class="section section--contact-form">
+<section class="section section--contact-form" data-aos="fade-up">
   <div class="row">
     <div class="small-12 columns">
       <div class="row">

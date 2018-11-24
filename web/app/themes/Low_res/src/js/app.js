@@ -1,1 +1,1 @@
-//$(document).foundation();
+AOS.init();
