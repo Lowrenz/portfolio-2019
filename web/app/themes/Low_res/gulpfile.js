@@ -111,7 +111,7 @@ let err = (error) => {
 //build function, compiles all resources to dist folder
 gulp.task('build', gulp.parallel(
   'move-fonts',
-  'compile-vendor-js',
+  //'compile-vendor-js',
   'compile-app-js',
   'compile-sass',
   'optimize-images',

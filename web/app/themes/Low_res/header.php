@@ -24,7 +24,7 @@
   <header>
     <nav class="top-nav">
       <a href="<?php echo get_home_url(); ?>">
-        <img class="site-logo" src="<?php echo get_template_directory_uri(); ?>/src/img/logo_color.svg">
+        <img class="site-logo" src="<?php echo get_template_directory_uri(); ?>/src/img/lowres-logo.svg">
       </a>
       <?php
                     $config = array(

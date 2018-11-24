@@ -14,7 +14,7 @@ $args = array(
 
 ?>
 
-  <section id="lists" class="section section--lists">
+  <section id="work" class="section section--portfolios">
     <div class="row">
     <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
       <div class="small-12 columns">
