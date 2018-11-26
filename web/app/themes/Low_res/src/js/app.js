@@ -3,9 +3,6 @@
 
 document.onreadystatechange = () => {
     if (document.readyState == "interactive") {
-        // Initialize your application or run some code.
-        AOS.init();
-
         // Scroll function for the nav
         const changeNav = async (navBar, aboutSectionTop, navBarHeight) => {
             if (aboutSectionTop <= navBarHeight + 300) {
@@ -37,7 +34,7 @@ document.onreadystatechange = () => {
             return variables;
         }
 
-        window.onscroll = async () => {
+        const initFunction = async () => {
             await gatherVariables().then(
                 async (res) => {
                     changeNav(res[0], res[1], res[2]);
@@ -45,5 +42,14 @@ document.onreadystatechange = () => {
                 }
             );
         }
+
+        // Scroll event listener
+        window.onscroll = async () => {
+            await initFunction();
+        }
+
+        // Initialize your application or run some code.
+        AOS.init();
+        initFunction();
     }
 }

@@ -24,17 +24,17 @@
   <header>
     <nav class="top-nav hidden">
       <div class="row">
-        <div class="columns small-6 medium-4">
+        <div class="columns small-6 medium-5 align-self-middle align-self-left">
           <a href="#" target="_self" class="button alien">
             Menu
           </a>
         </div>
-        <div class="columns small-6 medium-4">
+        <div class="columns small-6 medium-2 align-self-middle align-self-center">
           <a href="<?php echo get_home_url(); ?>">
             <img class="site-logo" src="<?php echo get_template_directory_uri(); ?>/dist/img/lowres-logo.svg">
           </a>
         </div>
-        <div class="social columns medium-4">
+        <div class="social columns medium-5 align-self-middle align-self-right">
           <div class="row">
             <div class="small-3 columns">
               <a href="https://www.facebook.com/lorenz.gillisjans" target="_blank">
