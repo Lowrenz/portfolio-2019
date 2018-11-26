@@ -22,7 +22,7 @@
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
   <header>
-    <nav class="top-nav">
+    <nav class="top-nav hidden">
       <a href="<?php echo get_home_url(); ?>">
         <img class="site-logo" src="<?php echo get_template_directory_uri(); ?>/src/img/lowres-logo.svg">
       </a>

@@ -23,7 +23,7 @@ $args = array(
           <?php the_title();  ?>
         </h3>
       </div>
-      <figure class="chart-<?php the_field('chart'); ?> animate">
+      <figure class="chart chart-<?php the_field('chart'); ?>">
         <svg role="img" xmlns="http://www.w3.org/2000/svg">
           <title><?php the_title();  ?></title>
           <desc><?php the_content();  ?></desc>

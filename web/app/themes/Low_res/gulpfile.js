@@ -12,7 +12,8 @@ var config = require('./gulp.config'),
   browserSync = require('browser-sync').create(),
   stripDebug = require('gulp-strip-debug'),
   babel = require('gulp-babel'),
-  autoprefixer = require('gulp-autoprefixer');
+  autoprefixer = require('gulp-autoprefixer'),
+  sourcemaps = require('gulp-sourcemaps');;
 
 //remove dist folder, let's start fresh
 gulp.task('clean',
@@ -43,8 +44,8 @@ gulp.task('optimize-images', gulp.series(
   }
 ));
 
-//compile sass
-gulp.task('compile-sass', gulp.series(
+//compile sass for production
+gulp.task('compile-sass-prod', gulp.series(
   (done) => {
     gulp.src(config.src.sassFile)
       .pipe(sass.sync().on('error', sass.logError))
@@ -63,14 +64,34 @@ gulp.task('compile-sass', gulp.series(
   }
 ));
 
+//compile sass
+gulp.task('compile-sass', gulp.series(
+  (done) => {
+    gulp.src(config.src.sassFile)
+      .pipe(sourcemaps.init())
+      .pipe(sass.sync().on('error', sass.logError))
+      .pipe(sass({
+        outputStyle: 'compressed'
+      }))
+      .pipe(autoprefixer({
+        browsers: ['last 2 versions', 'ie >= 9', 'android >= 4.4', 'ios >= 7'],
+        cascade: false
+      }))
+      .pipe(sourcemaps.write('.'))
+      .pipe(gulp.dest(config.dist.css))
+      .pipe(browserSync.reload({
+        stream: true
+      }));
+    done();
+  }
+));
+
 //concat and compile vendor specific javascript files
 gulp.task('compile-vendor-js', gulp.series(
   (done) => {
     gulp.src(config.src.vendorJs)
-      .pipe(babel())
       .pipe(concat('plugins.min.js'))
       .pipe(gulp.dest(config.dist.js))
-      .pipe(stripDebug())
       .pipe(uglify())
       .pipe(gulp.dest(config.dist.js));
     done();
@@ -81,7 +102,37 @@ gulp.task('compile-vendor-js', gulp.series(
 gulp.task('compile-app-js', gulp.series(
   (done) => {
     gulp.src(config.src.appJs)
-      .pipe(babel())
+      .pipe(sourcemaps.init())
+      .pipe(babel({
+        presets: ['@babel/env', {
+          "targets": {
+            "node": "current"
+          }
+        }]
+      }))
+      .pipe(concat('app.min.js'))
+      .pipe(gulp.dest(config.dist.js))
+      .pipe(uglify().on('error', err))
+      .pipe(sourcemaps.write('.'))
+      .pipe(gulp.dest(config.dist.js))
+      .pipe(browserSync.reload({
+        stream: true
+      }));
+    done();
+  }
+));
+
+//compile app.js file for production
+gulp.task('compile-app-js-prod', gulp.series(
+  (done) => {
+    gulp.src(config.src.appJs)
+      .pipe(babel({
+        presets: ['@babel/env', {
+          "targets": {
+            "node": "current"
+          }
+        }]
+      }))
       .pipe(concat('app.min.js'))
       .pipe(stripDebug())
       .pipe(gulp.dest(config.dist.js))
@@ -114,6 +165,16 @@ gulp.task('build', gulp.parallel(
   'compile-vendor-js',
   'compile-app-js',
   'compile-sass',
+  'optimize-images',
+  (done) => { done(); }
+));
+
+//build function, compiles all resources to dist folder
+gulp.task('build-production', gulp.parallel(
+  'move-fonts',
+  'compile-vendor-js',
+  'compile-app-js-prod',
+  'compile-sass-prod',
   'optimize-images',
   (done) => { done(); }
 ));
