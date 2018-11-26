@@ -23,10 +23,45 @@
     <![endif]-->
   <header>
     <nav class="top-nav hidden">
-      <a href="<?php echo get_home_url(); ?>">
-        <img class="site-logo" src="<?php echo get_template_directory_uri(); ?>/src/img/lowres-logo.svg">
-      </a>
-      <?php
+      <div class="row">
+        <div class="columns small-6 medium-4">
+          <a href="#" target="_self" class="button alien">
+            Menu
+          </a>
+        </div>
+        <div class="columns small-6 medium-4">
+          <a href="<?php echo get_home_url(); ?>">
+            <img class="site-logo" src="<?php echo get_template_directory_uri(); ?>/dist/img/lowres-logo.svg">
+          </a>
+        </div>
+        <div class="social columns medium-4">
+          <div class="row">
+            <div class="small-3 columns">
+              <a href="https://www.facebook.com/lorenz.gillisjans" target="_blank">
+                <img src="<?php echo get_template_directory_uri(); ?>/dist/img/facebook.svg" alt="Facebook">
+              </a>
+            </div>
+            <div class="small-3 columns"
+              ><a href="https://twitter.com/Low_res" target="_blank">
+                <img src="<?php echo get_template_directory_uri(); ?>/dist/img/twitter.svg" alt="Twitter">
+              </a>
+            </div>
+            <div class="small-3 columns">
+              <a href="https://www.linkedin.com/in/lorenzgillisjans/" target="_blank">
+                <img src="<?php echo get_template_directory_uri(); ?>/dist/img/linkedin.svg" alt="LinkedIn">
+              </a>
+            </div>
+            <div class="small-3 columns">
+              <a href="tel:+32479486532" target="_blank">
+                <img src="<?php echo get_template_directory_uri(); ?>/dist/img/phone.svg" alt="Phone">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-detail hidden">
+    <?php
                     $config = array(
                     'menu'            => "main-menu",
                     'container'       => false,
@@ -38,5 +73,5 @@
                     );
                     ?>
       <?php wp_nav_menu( $config ); ?>
-    </nav>
+    </div>
   </header>

@@ -1,5 +1,37 @@
 header{
-    .nav{
+    nav.top-nav{
+        top: 0;
+        left:0;
+        width: 100%;
+        z-index: 999;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        transition: .3s ease-in-out;
+        height: auto;
+        //background-color: $pink-bg;
 
+        .site-logo{
+            // width: 275px;
+            // height: 135px;
+            width: 17.19rem;
+            height: 8.44rem;
+        }
+
+        .social{
+            a, img{
+                width: 100%;
+                display: block;
+                margin: 0;
+                padding: 0;
+            }
+
+            a{
+                height: 100%;
+            }
+
+            img{
+                height: auto;
+            }
+        }
     }
 }

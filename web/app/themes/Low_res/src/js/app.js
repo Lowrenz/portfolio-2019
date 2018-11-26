@@ -8,10 +8,10 @@ document.onreadystatechange = () => {
 
         // Scroll function for the nav
         const changeNav = async (navBar, aboutSectionTop, navBarHeight) => {
-            if (aboutSectionTop <= navBarHeight) {
-                navBar.className = ('top-nav hidden');
-            } else if (aboutSectionTop >= navBarHeight) {
-                navBar.className = ('top-nav sticky visible');
+            if (aboutSectionTop <= navBarHeight + 300) {
+                navBar.className = ('top-nav fixed visible');
+            } else {
+                navBar.className = ('top-nav fixed hidden');
             }
         }
 
@@ -31,7 +31,6 @@ document.onreadystatechange = () => {
 
             // Add them to the variables array
             variables.push(navBar);
-            variables.push(aboutSection);
             variables.push(aboutSectionTop);
             variables.push(navBarHeight);
 
@@ -39,10 +38,12 @@ document.onreadystatechange = () => {
         }
 
         window.onscroll = async () => {
-            let variables = gatherVariables();
-            console.log(variables);
-            changeNav(variables[0], variables[2], variables[3]);
-            addAnimateOnProgress();
+            await gatherVariables().then(
+                async (res) => {
+                    changeNav(res[0], res[1], res[2]);
+                    addAnimateOnProgress();
+                }
+            );
         }
     }
 }

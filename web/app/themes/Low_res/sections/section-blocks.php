@@ -17,7 +17,7 @@ $args = array(
   <section id="about" class="section section--blocks">
     <div class="row">
     <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-      <div class="small-12 columns pink-bg box-shadow box" data-aos="fade-up">
+      <div class="small-12 columns pink-after box" data-aos="fade-up">
         <p><?php the_content(); ?></p>
       </div>
       <?php endwhile; else: ?> <p>Sorry, there are no blocks to display</p> <?php endif; ?>

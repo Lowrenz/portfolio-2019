@@ -17,7 +17,7 @@ $args = array(
   <section id="services" class="section section--grouped-blocks">
     <div class="row">
     <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-      <div class="small-12 columns pink-bg box box-shadow" data-category="<?php the_field('category'); ?>" data-aos="fade-up">
+      <div class="small-12 columns pink-after box" data-category="<?php the_field('category'); ?>" data-aos="fade-up">
         <span class="hidden"><?php the_title();  ?></span>
         <span class="material-icons white text-shadow big"><?php the_field('icon'); ?></span>
         <p><?php the_content(); ?></p>

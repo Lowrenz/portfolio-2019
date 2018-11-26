@@ -7,15 +7,15 @@
 }
 
 ::-webkit-scrollbar-thumb {
-	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px $purple-bg;
-	background-color: $purple-bg;
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px $purple-bg;
+    background-color: $purple-bg;
 }
 
 ::-webkit-scrollbar-track {
-	-webkit-box-shadow: inset 0 0 6px $pink-bg;
-	border-radius: 10px;
-	background-color: $pink;
+    -webkit-box-shadow: inset 0 0 6px $pink-bg;
+    border-radius: 10px;
+    background-color: $pink;
 }
 
 ::-webkit-selection {
@@ -42,9 +42,12 @@
     max-width: 90rem;
 }
 
-.sticky{
-    position:sticky;
-    top:0;
+.sticky {
+    position: sticky;
+}
+
+.fixed {
+    position: fixed;
 }
 
 body {
@@ -61,75 +64,137 @@ body.lock {
     overflow: hidden;
 }
 
-.pink{
+.pink {
     color: $pink;
 
-    &-bg{
+    &-bg {
         background-color: $pink-bg;
     }
-}
 
-.purple{
-    color: $purple;
-
-    &-bg{
-        background-color: $purple-bg;
+    &-after {
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 10%;
+            width: 90%;
+            height: 100%;
+            background-color: $pink-bg;
+            z-index: -1;
+            @include box-shadow();
+        }
     }
 }
 
-.white{
+.purple {
+    color: $purple;
+
+    &-bg {
+        background-color: $purple-bg;
+    }
+
+    &-after {
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 10%;
+            width: 90%;
+            height: 100%;
+            background-color: $purple-bg;
+            z-index: -1;
+            @include box-shadow();
+        }
+    }
+}
+
+.button{
+    color: $white;
+    padding: 38px 25px;
+    background-color: $purple-bg;
+    border: 2px solid $pink;
+    margin: 0;
+
+    font-size: 3.5rem;
+    font-family: $alien-font-family, $body-font-family;
+
+    @media only screen and (max-width: 630px) {
+        font-size: 2.8rem;
+    }
+
+    @media only screen and (max-width: 480px) {
+        font-size: 2rem;
+    }
+
+    @include word-wrap();
+}
+
+.white {
     color: $white;
 }
 
 .fullpage {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
 }
 
-.hidden{
-    visibility: hidden;
-    width:0;
-    height:0;
-    padding:0;
-    margin:0;
-    transition: .3s ease-in-out;
+.hidden {
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    transition: .2s ease-in-out;
 }
 
-.visible{
-    display: block;
-    visibility: visible;
-    transition: .3s ease-in-out;
+.visible {
+    opacity: 1;
+    height: auto;
+    transition: .4s ease-in-out;
 }
 
-h1, h2, h3, h4, h5, h6, p, .title {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+.title {
     font-size: 3.5rem;
     font-family: $body-font-family;
 
-    @media only screen and (max-width: 630px){
+    @media only screen and (max-width: 630px) {
         font-size: 2.8rem;
     }
 
-    @media only screen and (max-width: 480px){
+    @media only screen and (max-width: 480px) {
         font-size: 2rem;
     }
-    
+
     @include word-wrap();
     @include text-shadow();
 }
 
-.box{
+.box {
     padding-top: 60px;
     padding-bottom: 60px;
     padding-right: 110px;
     margin-bottom: 230px;
 
-    p{
-        margin-left: -10rem;
-    }
+    position: relative;
 }
 
-.alien{
+.alien {
     font-family: $alien-font-family;
+
+    p,
+    span,
+    a,
+    button {
+        font-family: $alien-font-family;
+    }
 }
 
 img {
@@ -152,14 +217,14 @@ address {
     padding: 0.2em 0;
 }
 
-.big{
+.big {
     font-size: 10.5rem;
 
-    @media only screen and (max-width: 530px){
+    @media only screen and (max-width: 530px) {
         font-size: 8rem;
     }
 
-    @media only screen and (max-width: 400px){
+    @media only screen and (max-width: 400px) {
         font-size: 6rem;
     }
 }
@@ -169,7 +234,7 @@ address {
     top: -100px;
     right: 0;
     color: $white;
-    padding: 5px 10px;
+    padding: 38px 25px;
     background-color: $purple-bg;
     border: 2px solid $pink;
     z-index: 5;
@@ -187,11 +252,11 @@ address {
     position: relative;
 }
 
-.box-shadow{
+.box-shadow {
     @include box-shadow();
 }
 
-.text-shadow{
+.text-shadow {
     @include text-shadow();
 }
 
