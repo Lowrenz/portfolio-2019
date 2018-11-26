@@ -112,8 +112,8 @@ gulp.task('compile-app-js', gulp.series(
       }))
       .pipe(concat('app.min.js'))
       .pipe(gulp.dest(config.dist.js))
-      .pipe(uglify().on('error', err))
       .pipe(sourcemaps.write('.'))
+      .pipe(uglify().on('error', err))
       .pipe(gulp.dest(config.dist.js))
       .pipe(browserSync.reload({
         stream: true
@@ -134,10 +134,10 @@ gulp.task('compile-app-js-prod', gulp.series(
         }]
       }))
       .pipe(concat('app.min.js'))
-      .pipe(stripDebug())
       .pipe(gulp.dest(config.dist.js))
       .pipe(uglify().on('error', err))
       .pipe(gulp.dest(config.dist.js))
+      .pipe(stripDebug())
       .pipe(browserSync.reload({
         stream: true
       }));
@@ -170,7 +170,7 @@ gulp.task('build', gulp.parallel(
 ));
 
 //build function, compiles all resources to dist folder
-gulp.task('build-production', gulp.parallel(
+gulp.task('build-prod', gulp.parallel(
   'move-fonts',
   'compile-vendor-js',
   'compile-app-js-prod',

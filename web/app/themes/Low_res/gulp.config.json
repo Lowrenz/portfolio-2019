@@ -11,6 +11,7 @@
             "src/js/app.js"
         ],
         "vendorJs": [
+            "node_modules/@babel/polyfill/dist/polyfill.js",
             "node_modules/aos/dist/aos.js"
         ],
         "sassPath": [

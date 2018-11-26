@@ -1,3 +1,5 @@
+"use strict";
+
 document.onreadystatechange = () => {
     if (document.readyState == "interactive") {
         // Initialize your application or run some code.
@@ -5,7 +7,6 @@ document.onreadystatechange = () => {
 
         // Scroll function for the nav
         const changeNav = async (navBar, aboutSection, aboutSectionTop, navBarHeight)  => {
-            console.log("changeNav");
             if(aboutSectionTop <= navBarHeight) {
                   navBar.className = ('top-nav hidden');
             } else if(aboutSectionTop >= navBarHeight) {
@@ -14,12 +15,10 @@ document.onreadystatechange = () => {
         }
 
         const addAnimateOnProgress = async () => {
-            console.log("addAnimateOnProgress");
+            
         }
 
         const gatherVariables = async () => {
-            console.log("gatherVariables");
-
             // Create an array
             let variables = [];
 
@@ -34,13 +33,11 @@ document.onreadystatechange = () => {
             variables.push(aboutSection);
             variables.push(aboutSectionTop);
             variables.push(navBarHeight);
-
-            console.log(variables);
-
         }
 
         window.onscroll = async () => {
             let variables = gatherVariables();
+            console.log(variables);
             changeNav(variables[0], variables[1], variables[2], variables[3]);
             addAnimateOnProgress();
         }
