@@ -140,7 +140,7 @@ body.lock {
     width: 100%;
 }
 
-.hidden {
+.hidden-soft {
     opacity: 0;
     height: 0;
     padding: 0;
@@ -148,8 +148,24 @@ body.lock {
     transition: .2s ease-in-out;
 }
 
-.visible {
+.hidden {
+    display: none;
+    visibility: hidden;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    transition: .2s ease-in-out;
+}
+
+.visible-soft {
     opacity: 1;
+    height: auto;
+    transition: .4s ease-in-out;
+}
+
+.visible {
+    visibility: visible;
+    display: block;
     height: auto;
     transition: .4s ease-in-out;
 }

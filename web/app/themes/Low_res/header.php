@@ -22,7 +22,7 @@
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
   <header>
-    <nav class="top-nav hidden">
+    <nav class="top-nav hidden-soft">
       <div class="row">
         <div class="columns small-6 medium-5 align-self-middle align-self-left">
           <a href="#" target="_self" class="button alien">
@@ -60,7 +60,7 @@
         </div>
       </div>
     </nav>
-    <div class="nav-detail hidden">
+    <div class="nav-detail hidden-soft">
     <?php
                     $config = array(
                     'menu'            => "main-menu",

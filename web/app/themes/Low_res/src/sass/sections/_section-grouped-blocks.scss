@@ -1,6 +1,20 @@
 .section--grouped-blocks{
+    .box{
+        position: relative;
+    }
     .material-icons{
-        margin: -10.5rem;
-        margin-left: 84.5rem;
+        position: absolute;
+        top: -5.25rem;
+        right: -5.25rem;
+
+        @media only screen and (max-width: 530px) {
+            top: -4rem;
+            right: -4rem;
+        }
+
+        @media only screen and (max-width: 400px) {
+            top: -3rem;
+            right: -3rem;
+        }
     }
 }
