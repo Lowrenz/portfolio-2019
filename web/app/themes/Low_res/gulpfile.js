@@ -1,4 +1,3 @@
-// () => {
 'use strict';
 
 var config = require('./gulp.config'),
@@ -104,17 +103,13 @@ gulp.task('compile-app-js', gulp.series(
     gulp.src(config.src.appJs)
       .pipe(sourcemaps.init())
       .pipe(babel({
-        presets: ['@babel/env', {
-          "targets": {
-            "node": "current"
-          }
-        }]
-      }))
+        presets: ['@babel/env']
+      }).on('error', err))
       .pipe(concat('app.min.js'))
       .pipe(gulp.dest(config.dist.js))
-      .pipe(sourcemaps.write('.'))
       .pipe(uglify().on('error', err))
       .pipe(gulp.dest(config.dist.js))
+      .pipe(sourcemaps.write('.'))
       .pipe(browserSync.reload({
         stream: true
       }));
@@ -127,12 +122,8 @@ gulp.task('compile-app-js-prod', gulp.series(
   (done) => {
     gulp.src(config.src.appJs)
       .pipe(babel({
-        presets: ['@babel/env', {
-          "targets": {
-            "node": "current"
-          }
-        }]
-      }))
+        presets: ['@babel/env']
+      }).on('error', err))
       .pipe(concat('app.min.js'))
       .pipe(gulp.dest(config.dist.js))
       .pipe(uglify().on('error', err))
@@ -204,5 +195,3 @@ gulp.task('default', gulp.series(
   'serve', 'watch',
   (done) => { done(); }
 ));
-
-// };
