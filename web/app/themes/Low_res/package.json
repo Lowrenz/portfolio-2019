@@ -1,17 +1,37 @@
 {
-  "name": "Low_res | Retro Futurism",
+  "name": "low_res",
   "version": "1.0.0",
-  "description": "80s Retro Futurism Theme",
+  "description": "80s retro futurism theme",
   "main": "gulpfile.js",
+  "directories": {
+    "lib": "lib"
+  },
   "scripts": {
-    "test": ""
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "type": "",
-    "url": ""
+    "type": "git",
+    "url": "git+https://github.com/Lowrenz/portfolio-2019.git"
   },
+  "keywords": [
+    "80s",
+    "retro",
+    "theme",
+    "wordpress",
+    "space",
+    "tron",
+    "futurism",
+    "retro",
+    "futurism",
+    "cms",
+    "wp-theme"
+  ],
   "author": "Lorenz Gillisjans",
-  "license": "Creative Commons (CC) license",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lowrenz/portfolio-2019/issues"
+  },
+  "homepage": "https://github.com/Lowrenz/portfolio-2019#readme",
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
