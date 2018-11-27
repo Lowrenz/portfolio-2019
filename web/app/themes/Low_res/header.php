@@ -23,45 +23,35 @@
     <![endif]-->
   <header>
     <nav class="top-nav hidden-soft">
-      <div class="row">
-        <div class="columns small-6 medium-5 align-self-middle align-self-left">
-          <a href="#" target="_self" class="button alien">
-            Menu
+      <div class="branding">
+        <a href="<?php echo get_home_url(); ?>">
+          <img class="site-logo" src="<?php echo get_template_directory_uri(); ?>/dist/img/lowres-logo.svg">
+        </a>
+      </div>
+      <div class="menu">
+        <a href="#" target="_self" class="button alien">
+          Menu
+        </a>
+      </div>
+      <div class="social">
+        <div class="row">
+          <a class="item" href="https://www.facebook.com/lorenz.gillisjans" target="_blank">
+            <img src="<?php echo get_template_directory_uri(); ?>/dist/img/facebook.svg" alt="Facebook">
           </a>
-        </div>
-        <div class="columns small-6 medium-2 align-self-middle align-self-center">
-          <a href="<?php echo get_home_url(); ?>">
-            <img class="site-logo" src="<?php echo get_template_directory_uri(); ?>/dist/img/lowres-logo.svg">
+          <a class="item" href="https://twitter.com/Low_res" target="_blank">
+            <img src="<?php echo get_template_directory_uri(); ?>/dist/img/twitter.svg" alt="Twitter">
           </a>
-        </div>
-        <div class="social columns medium-5 align-self-middle align-self-right">
-          <div class="row">
-            <div class="small-3 columns">
-              <a href="https://www.facebook.com/lorenz.gillisjans" target="_blank">
-                <img src="<?php echo get_template_directory_uri(); ?>/dist/img/facebook.svg" alt="Facebook">
-              </a>
-            </div>
-            <div class="small-3 columns"
-              ><a href="https://twitter.com/Low_res" target="_blank">
-                <img src="<?php echo get_template_directory_uri(); ?>/dist/img/twitter.svg" alt="Twitter">
-              </a>
-            </div>
-            <div class="small-3 columns">
-              <a href="https://www.linkedin.com/in/lorenzgillisjans/" target="_blank">
-                <img src="<?php echo get_template_directory_uri(); ?>/dist/img/linkedin.svg" alt="LinkedIn">
-              </a>
-            </div>
-            <div class="small-3 columns">
-              <a href="tel:+32479486532" target="_blank">
-                <img src="<?php echo get_template_directory_uri(); ?>/dist/img/phone.svg" alt="Phone">
-              </a>
-            </div>
-          </div>
+          <a class="item" href="https://www.linkedin.com/in/lorenzgillisjans/" target="_blank">
+            <img src="<?php echo get_template_directory_uri(); ?>/dist/img/linkedin.svg" alt="LinkedIn">
+          </a>
+          <a class="item" href="tel:+32479486532" target="_blank">
+            <img src="<?php echo get_template_directory_uri(); ?>/dist/img/phone.svg" alt="Phone">
+          </a>
         </div>
       </div>
     </nav>
     <div class="nav-detail hidden-soft">
-    <?php
+      <?php
                     $config = array(
                     'menu'            => "main-menu",
                     'container'       => false,

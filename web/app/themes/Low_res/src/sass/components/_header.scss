@@ -1,37 +1,99 @@
-header{
+header {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 999;
+    padding: 25px;
+
     nav.top-nav{
-        top: 0;
-        left:0;
+        overflow: hidden;
+        margin: 0;
         width: 100%;
-        z-index: 999;
-        padding-top: 25px;
-        padding-bottom: 25px;
         transition: .3s ease-in-out;
         height: auto;
-        //background-color: $pink-bg;
+        position: relative;
 
-        .site-logo{
-            // width: 275px;
-            // height: 135px;
+        .menu{
+            width: 100%;
+            max-width: 200px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            margin-top: 8px;
 
-            // width: 17.19rem;
-            // height: 8.44rem;
+            @media screen and (max-width: 39.9375em) {
+                position: static;
+            }
+
+            .button{
+                width: 100%;
+                max-width: 200px;
+            }
+
+            @media screen and (max-width: 39.9375em) {
+                margin: 20px auto;
+                max-width: 100%;
+
+                .button{
+                    max-width: 100%;
+                }
+            }
         }
 
         .social{
-            a, img{
-                width: 100%;
-                display: block;
-                margin: 0;
-                padding: 0;
+            max-width: 350px;
+            margin-top: 15px;
+            
+            @media screen and (min-width: 75em) {
+                max-width: 496px;
+                margin-top: 8px;
             }
+            width: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 1000;
+            display: block;
+
+            // Small to Medium
+            @media screen and (max-width: 63.9375em) {
+                display: none;
+            }
+
+            .item{
+                width: 25%;
+                padding:0 12px;
+
+                @media screen and (min-width: 75em) {
+                    padding:0 23px;
+                }
+            }
+        }
+
+        .branding{
+            max-width: 200px;
+            width: 100%;
+            margin: 0px auto;
 
             a{
-                height: 100%;
+                display: block;
+                height: auto;
+                width: 100%;
             }
 
-            img{
-                height: auto;
+            @media screen and (max-width: 39.9375em) {
+                max-width: 100%;
+
+                a{
+                    img.site-logo{
+                        max-width: 200px;
+                        margin-left: calc(#{"50% - 100px"});
+                    }
+                }
             }
         }
     }

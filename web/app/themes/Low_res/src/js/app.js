@@ -6,9 +6,9 @@ document.onreadystatechange = () => {
         // Scroll function for the nav
         const changeNav = async (navBar, aboutSectionTop, navBarHeight) => {
             if (aboutSectionTop <= navBarHeight + 300) {
-                navBar.className = ('top-nav fixed visible-soft');
+                navBar.className = ('top-nav visible-soft');
             } else {
-                navBar.className = ('top-nav fixed hidden-soft');
+                navBar.className = ('top-nav hidden-soft');
             }
         }
 

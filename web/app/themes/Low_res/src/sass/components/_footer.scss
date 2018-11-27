@@ -1,3 +1,43 @@
+.fixed-area{
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 999;
+    padding: 25px;
+
+    .bottom-nav{
+        overflow: hidden;
+        margin: 0;
+        width: 100%;
+        transition: .3s ease-in-out;
+        height: auto;
+        position: relative;
+
+        .social-mobile{
+            max-width: 100%;
+            width: 100%;
+            // position: fixed;
+            // bottom: 0;
+            // left: 0;
+            z-index: 1000;
+            display: none;
+            width: 25%;
+    
+            .item{
+                padding: 0 23px;
+            }
+    
+            // Small to Medium
+            @media screen and (max-width: 63.9375em) {
+                display: block;
+            }
+        }
+    }
+}
+
 footer {
     .section--footer {
         .footer {
