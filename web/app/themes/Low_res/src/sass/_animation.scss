@@ -114,6 +114,11 @@
     }
 }
 
+.pulsate {
+    -webkit-animation: pulsate-fwd 2s ease-in-out infinite both;
+    animation: pulsate-fwd 2s ease-in-out infinite both;
+}
+
 @-webkit-keyframes pulsate-once {
     0% {
         -webkit-transform: scale(0.1, 0.1);
@@ -131,6 +136,11 @@
     }
 }
 
+.pulsate-once {
+    -webkit-animation: pulsate-fwd 3s ease-in-out once;
+    animation: pulsate-fwd 3s ease-in-out once;
+}
+
 @-webkit-keyframes opacityPulse {
     0% {
         opacity: 0.0;
@@ -143,6 +153,11 @@
     100% {
         opacity: 0.0;
     }
+}
+
+.opacity-pulse {
+    -webkit-animation: opacityPulse 1s ease-in-out infinite both;
+    animation: opacityPulse 1s ease-in-out infinite both;
 }
 
 @-webkit-keyframes fadeIn {
@@ -170,6 +185,11 @@
         opacity: #9A2727;
         opacity: 1;
     }
+}
+
+.alert-pulse {
+    -webkit-animation: alertPulse 2s ease-in-out infinite both;
+    animation: alertPulse 2s ease-in-out infinite both;
 }
 
 @-webkit-keyframes load6 {

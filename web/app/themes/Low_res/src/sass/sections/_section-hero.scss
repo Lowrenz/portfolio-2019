@@ -1,7 +1,4 @@
 .section--hero {
-    position: relative;
-    z-index: 10001;
-
     .logo-wrapper{
         display: table;
         width: 100%;
@@ -19,5 +16,9 @@
 
     .hero-content{
         margin-top: 140px;
+
+        @media screen and (max-width: 39.9375em) {
+            margin-top: 70px;
+        }
     }
 }

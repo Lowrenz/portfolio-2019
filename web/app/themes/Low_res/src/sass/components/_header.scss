@@ -67,9 +67,26 @@ header {
             .item{
                 width: 25%;
                 padding:0 12px;
+                transition: .3s ease-in-out;
+                img{
+                    transition: .2s ease-in-out;
+                }
 
                 @media screen and (min-width: 75em) {
                     padding:0 23px;
+                }
+
+                &:hover, &:focus, &:active{
+                    transition: .3s ease-in-out;
+                    -webkit-animation: pulsate-fwd 3s ease-in-out infinite both;
+                    animation: pulsate-fwd 3s ease-in-out infinite both;
+                    cursor: pointer;
+
+                    > img{
+                        background-color: $purple-bg;
+                        transition: .2s ease-in-out;
+                        border-radius: 200px;
+                    }
                 }
             }
         }

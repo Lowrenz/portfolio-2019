@@ -14,3 +14,36 @@
         width: 100%;
     }
 }
+
+.forminator-custom-form{
+    margin: 0 !important;
+}
+
+button#forminator-submit.forminator-button {
+    color: $white;
+    padding: 38px 25px;
+    background-color: $purple-bg !important;
+    border: 2px solid $pink;
+    transition: .3s ease-in-out;
+    margin: 0;
+
+    font-size: 3.5rem;
+    font-family: $alien-font-family, $body-font-family;
+
+    @media only screen and (max-width: 630px) {
+        font-size: 2.8rem;
+    }
+
+    @media only screen and (max-width: 480px) {
+        font-size: 2rem;
+    }
+
+    @include word-wrap();
+
+    &:hover, &:focus, &:active{
+        transform: translate(14px, 0);
+        transition: .3s ease-in-out;
+        background-color: $purple !important;
+        cursor: pointer;
+    }
+}

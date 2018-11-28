@@ -39,7 +39,7 @@
 }
 
 .row {
-    max-width: 90rem;
+    max-width: 90em;
 }
 
 .sticky {
@@ -115,6 +115,7 @@ body.lock {
     padding: 38px 25px;
     background-color: $purple-bg;
     border: 2px solid $pink;
+    transition: .3s ease-in-out;
     margin: 0;
 
     font-size: 3.5rem;
@@ -129,6 +130,13 @@ body.lock {
     }
 
     @include word-wrap();
+
+    &:hover, &:focus, &:active{
+        transform: translate(14px, 0);
+        transition: .3s ease-in-out;
+        background-color: $purple;
+        cursor: pointer;
+    }
 }
 
 .white {

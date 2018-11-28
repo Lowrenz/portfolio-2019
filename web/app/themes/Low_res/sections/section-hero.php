@@ -7,8 +7,8 @@ $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' )
 
 <section id="home" class="section section--hero fullpage" data-aos="fade-up" data-aos-duration="1500">
   <div class="hero-background" style="background-image: url('<?php echo $thumb['0']; ?>')"></div>
-  <div class="row">
-    <div class="column algin-self-middle align-center">
+  <div class="row fullpage">
+    <div class="column align-self-middle align-center">
       <div class="row">
         <div class="small-12 columns">
           <div class="logo-wrapper">
@@ -19,9 +19,9 @@ $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' )
       <div class="row">
         <div class="small-12 columns">
           <div class="hero-content">
-            <h2 class="alien align-self-center text-center">
+            <h1 class="alien align-self-center text-center">
               <?php the_content(); ?>
-            </h2>
+            </h1>
           </div>
         </div>
       </div>

@@ -2,16 +2,16 @@
   <div class="bottom-nav">
     <div class="social-mobile">
       <div class="row">
-        <a class="item" href="https://www.facebook.com/lorenz.gillisjans" target="_blank">
+        <a class="column item" href="https://www.facebook.com/lorenz.gillisjans" target="_blank">
           <img src="<?php echo get_template_directory_uri(); ?>/dist/img/facebook.svg" alt="Facebook">
         </a>
-        <a class="item" href="https://twitter.com/Low_res" target="_blank">
+        <a class="column item" href="https://twitter.com/Low_res" target="_blank">
           <img src="<?php echo get_template_directory_uri(); ?>/dist/img/twitter.svg" alt="Twitter">
         </a>
-        <a class="item" href="https://www.linkedin.com/in/lorenzgillisjans/" target="_blank">
+        <a class="column item" href="https://www.linkedin.com/in/lorenzgillisjans/" target="_blank">
           <img src="<?php echo get_template_directory_uri(); ?>/dist/img/linkedin.svg" alt="LinkedIn">
         </a>
-        <a class="item" href="tel:+32479486532" target="_blank">
+        <a class="column item" href="tel:+32479486532" target="_blank">
           <img src="<?php echo get_template_directory_uri(); ?>/dist/img/phone.svg" alt="Phone">
         </a>
       </div>
