@@ -1,0 +1,16 @@
+.forminator-field {
+    .forminator-input,
+    forminator-textarea,
+    input,
+    textarea,
+        {
+        min-height: 120px;
+        padding: 40px 28px;
+        @include text-shadow;
+        color: $white !important;
+        font-size: 3.5rem !important;
+        background-color: $purple-bg !important;
+        border: 4px solid $pink !important;
+        width: 100%;
+    }
+}

@@ -1,0 +1,73 @@
+@font-face {
+    font-family: $ailerons-font-family;
+    font-style: normal;
+    font-weight: 400;
+    src: url('#{$ailerons-font-file}.eot');
+    /* For IE6-8 */
+    src: local($ailerons-font-family),
+    local($ailerons-font-name),
+    url('#{$ailerons-font-file}.eot?#iefix') format('embedded-opentype'),
+    url('#{$ailerons-font-file}.woff2') format('woff2'),
+    url('#{$ailerons-font-file}.woff') format('woff'),
+    url('#{$ailerons-font-file}.otf') format("opentype"),
+    url('#{$ailerons-font-file}.ttf') format('truetype'),
+    url('#{$ailerons-font-file}.svg#Ailerons-Regular') format('svg');
+}
+
+@font-face {
+    font-family: $alien-font-family;
+    font-style: normal;
+    font-weight: 400;
+    src: url('#{$alien-font-file}.eot');
+    /* For IE6-8 */
+    src: local($alien-font-family),
+    local($alien-font-name),
+    url('#{$alien-font-file}.eot?#iefix') format('embedded-opentype'),
+    url('#{$alien-font-file}.woff2') format('woff2'),
+    url('#{$alien-font-file}.woff') format('woff'),
+    url('#{$alien-font-file}.otf') format("opentype"),
+    url('#{$alien-font-file}.ttf') format('truetype'),
+    url('#{$alien-font-file}.svg#SFAlienEncounters') format('svg');
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+.title {
+    font-size: 3.5rem;
+    font-family: $body-font-family;
+
+    @media only screen and (max-width: 630px) {
+        font-size: 2.8rem;
+    }
+
+    @media only screen and (max-width: 480px) {
+        font-size: 2rem;
+    }
+
+    @include word-wrap();
+    @include text-shadow();
+}
+
+.alien {
+    font-family: $alien-font-family;
+    hyphens: none;
+    word-wrap: normal;
+    overflow-wrap: normal;
+    word-break: normal;
+
+    p,
+    span,
+    a,
+    button {
+        font-family: $alien-font-family;
+        hyphens: none;
+        word-wrap: normal;
+        overflow-wrap: normal;
+        word-break: normal;
+    }
+}

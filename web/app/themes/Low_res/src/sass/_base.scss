@@ -38,7 +38,7 @@
     color: $white;
 }
 
-.row{
+.row {
     max-width: 90rem;
 }
 
@@ -110,7 +110,7 @@ body.lock {
     }
 }
 
-.button{
+.button {
     color: $white;
     padding: 38px 25px;
     background-color: $purple-bg;
@@ -136,7 +136,7 @@ body.lock {
 }
 
 .fullpage {
-    height: 100vh;
+    height: 95vh;
     width: 100%;
 }
 
@@ -170,29 +170,6 @@ body.lock {
     transition: .4s ease-in-out;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-.title {
-    font-size: 3.5rem;
-    font-family: $body-font-family;
-
-    @media only screen and (max-width: 630px) {
-        font-size: 2.8rem;
-    }
-
-    @media only screen and (max-width: 480px) {
-        font-size: 2rem;
-    }
-
-    @include word-wrap();
-    @include text-shadow();
-}
-
 .box {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -200,17 +177,6 @@ p,
     margin-bottom: 230px;
 
     position: relative;
-}
-
-.alien {
-    font-family: $alien-font-family;
-
-    p,
-    span,
-    a,
-    button {
-        font-family: $alien-font-family;
-    }
 }
 
 img {
@@ -291,17 +257,4 @@ address {
     transform: translateZ(0);
     -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
     animation: load6 1.7s infinite ease, round 1.7s infinite ease;
-}
-
-.forminator-field{
-    .forminator-input, forminator-textarea, input, textarea, {
-        min-height: 120px;
-        padding: 40px 28px;
-        @include text-shadow;
-        color: $white !important;
-        font-size: 3.5rem !important;
-        background-color: $purple-bg !important;
-        border: 4px solid $pink !important;
-        width: 100%;
-    }
 }

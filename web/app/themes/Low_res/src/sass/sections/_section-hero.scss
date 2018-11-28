@@ -1,3 +1,23 @@
 .section--hero {
-    
+    position: relative;
+    z-index: 10001;
+
+    .logo-wrapper{
+        display: table;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
+        .site-logo{
+            margin: 0px auto;
+            display: table-cell;
+            vertical-align: middle;
+            width: 100%;
+            max-width: 750px;
+        }
+    }
+
+    .hero-content{
+        margin-top: 140px;
+    }
 }
