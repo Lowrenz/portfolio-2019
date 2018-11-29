@@ -238,6 +238,21 @@ address {
     }
 }
 
+.link, a:not(.button){
+    transition: .3s ease-in-out;
+    &:hover,
+    &:active,
+    &:visited {
+        color: $pink;
+        transition: .3s ease-in-out;
+        text-decoration: none;
+        
+        &.pink, &.purple{
+            color: $white;
+        }
+    }
+}
+
 .relative {
     position: relative;
 }

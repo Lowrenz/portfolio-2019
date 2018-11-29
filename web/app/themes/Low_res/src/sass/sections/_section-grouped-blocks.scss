@@ -1,20 +1,34 @@
 .section--grouped-blocks{
+    perspective: 25px;
     .box{
         position: relative;
+
+        // Anim on cursor move
+        transition: transform 0.3s;
+        -webkit-transition: transform 0.3s;
+        -moz-transition: transform 0.3s;
+        -o-transition: transform 0.3s;
     }
     .material-icons{
         position: absolute;
         top: -5.25rem;
         right: -5.25rem;
 
-        @media only screen and (max-width: 530px) {
-            top: -4rem;
-            right: -4rem;
-        }
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+        -webkit-animation: pulsate-fwd 3s ease-in-out infinite both;
+        animation: pulsate-fwd 3s ease-in-out infinite both;
 
-        @media only screen and (max-width: 400px) {
+        /* Small only */
+        @media screen and (max-width: 39.9375em) {
             top: -3rem;
             right: -3rem;
+        }
+
+        /* Medium only */
+        @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+            top: -4rem;
+            right: -4rem;
         }
     }
 }

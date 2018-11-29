@@ -3,6 +3,32 @@
 
 document.onreadystatechange = () => {
     if (document.readyState == "interactive") {
+        const isInViewport = (elem) => {
+            if (typeof elem !== "undefined") {
+                let bounding = elem.getBoundingClientRect();
+
+                return (
+                    bounding.top >= 0 &&
+                    bounding.left >= 0 &&
+                    bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+        };
+
+        const addAnimateOnProgress = async () => {
+            let charts = document.querySelectorAll("#skills figure.chart"),
+                i = 0,
+                numberOfCharts = charts.length;
+
+            for (i; i <= numberOfCharts; i++) {
+                if (isInViewport(charts[i])) {
+                    if (typeof charts[i] != "undefined") {
+                        charts[i].classList.add("animate");
+                    }
+                }
+            }
+        }
         // Scroll function for the nav
         const changeNav = async (navBar, aboutSectionTop, navBarHeight) => {
             if (aboutSectionTop <= navBarHeight + 100) {
@@ -10,10 +36,6 @@ document.onreadystatechange = () => {
             } else {
                 navBar.className = ('top-nav hidden-soft');
             }
-        }
-
-        const addAnimateOnProgress = async () => {
-
         }
 
         const gatherVariables = async () => {
