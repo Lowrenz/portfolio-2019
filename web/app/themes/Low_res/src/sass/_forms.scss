@@ -1,6 +1,13 @@
+.forminator-row{
+    margin-bottom: 60px !important;
+    margin-top: 60px !important;
+    display: block;
+    height: auto;
+}
+
 .forminator-field {
     .forminator-input,
-    forminator-textarea,
+    .forminator-textarea,
     input,
     textarea,
         {
@@ -12,7 +19,86 @@
         background-color: $purple-bg !important;
         border: 4px solid $pink !important;
         width: 100%;
+        line-height: normal !important;
+
+        &::placeholder, &:-ms-input-placeholder, &::-webkit-input-placeholder, ::placeholder, :-ms-input-placeholder, ::-webkit-input-placeholder{
+            padding: 40px 28px !important;
+            line-height: normal !important;
+        }
     }
+
+    .forminator-textarea{
+        min-height: 300px !important;
+    }
+
+    &.forminator-is_active{
+        margin-top: 60px;
+        .forminator-field--label{
+            color: $white !important;
+            top: -37px;
+    
+            label.forminator-label{
+                color: $white !important;
+            }
+        }
+
+        .forminator-input--wrap{
+            &:after{
+                background-color: $purple !important;
+            }
+        }
+
+        .forminator-floating--textarea{
+            .forminator-label{
+                top: -37px !important;
+                position: absolute !important;
+            }
+        }
+    }
+
+    &.forminator-is_hover{
+        .forminator-input--wrap{
+            &:after{
+                background-color: $purple !important;
+                border-color: $pink !important;
+            }
+        }
+    }
+
+    &.forminator-is_filled{
+        .forminator-field--label{
+            display: none;
+        }
+    }
+
+    &.forminator-is_filled, &.forminator-has_error, &.forminator-is_hover,&.forminator-is_active{
+        .forminator-input--wrap, .forminator-textarea--wrap{
+            &:after{
+                background-color: transparent !important;
+                box-shadow: none !important;
+            }
+        }
+    }
+
+    .forminator-field--label{
+        top: 37px;
+
+        label.forminator-label{
+            font-size: 3.5rem !important;
+            display: block;
+            height: auto;
+            width: 100%;
+            //line-height: normal;
+        }
+    }
+}
+
+.forminator-label--validation{
+    font-size: 3.5rem !important;
+    display: block;
+    line-height: normal !important;
+    padding: 20px 0px 40px 0px;
+    color: $pink !important;
 }
 
 .forminator-custom-form{
