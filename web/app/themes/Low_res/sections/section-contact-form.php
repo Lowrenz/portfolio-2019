@@ -5,7 +5,7 @@
 $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
 ?>
 <section id="contact" class="section section--contact-form" data-aos="fade-up">
-  <div class="neon-circle">
+  <div class="neon-circle" data-aos="fade-up">
     <img src="<?php echo get_template_directory_uri(); ?>/dist/img/contact.svg" alt="Contact section">
     <!-- <div class="line">&nbsp;</div> -->
   </div>

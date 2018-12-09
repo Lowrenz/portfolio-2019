@@ -15,7 +15,7 @@ $args = array(
 ?>
 
 <section id="services" class="section section--grouped-blocks">
-  <div class="neon-circle">
+  <div class="neon-circle" data-aos="fade-up">
     <img src="<?php echo get_template_directory_uri(); ?>/dist/img/services.svg" alt="Services section">
     <!-- <div class="line">&nbsp;</div> -->
   </div>

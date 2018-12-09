@@ -29,6 +29,21 @@ document.onreadystatechange = () => {
                 }
             }
         }
+
+        const addPulsateOnNeon = async () => {
+            let neon = document.querySelectorAll(".neon-circle img"),
+                i = 0,
+                numberOfNeons = neon.length;
+
+            for (i; i <= numberOfNeons; i++) {
+                if (isInViewport(neon[i])) {
+                    if (typeof neon[i] != "undefined") {
+                        neon[i].classList.add("pulsate");
+                    }
+                }
+            }
+        }
+
         // Scroll function for the nav
         const changeNav = async (navBar, aboutSectionTop, navBarHeight) => {
             if (aboutSectionTop <= navBarHeight + 100) {
@@ -61,6 +76,7 @@ document.onreadystatechange = () => {
                 async (res) => {
                     changeNav(res[0], res[1], res[2]);
                     addAnimateOnProgress();
+                    addPulsateOnNeon();
                 }
             );
         }

@@ -19,7 +19,7 @@ $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' )
       <div class="row">
         <div class="small-12 columns">
           <div class="hero-content">
-            <h1 class="alien align-self-center text-center">
+            <h1 class="alien align-self-center text-center typewriter">
               <?php the_content(); ?>
             </h1>
           </div>

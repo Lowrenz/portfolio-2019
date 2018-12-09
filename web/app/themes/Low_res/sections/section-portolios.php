@@ -15,7 +15,7 @@ $args = array(
 ?>
 
 <section id="work" class="section section--portfolios">
-  <div class="neon-circle">
+  <div class="neon-circle" data-aos="fade-up">
     <img src="<?php echo get_template_directory_uri(); ?>/dist/img/work.svg" alt="Work / Portfolio section">
     <!-- <div class="line">&nbsp;</div> -->
   </div>

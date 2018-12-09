@@ -15,7 +15,7 @@ $args = array(
 ?>
 
 <section id="about" class="section section--blocks">
-  <div class="neon-circle">
+  <div class="neon-circle" data-aos="fade-up">
     <img src="<?php echo get_template_directory_uri(); ?>/dist/img/about.svg" alt="About section">
     <!-- <div class="line">&nbsp;</div> -->
   </div>

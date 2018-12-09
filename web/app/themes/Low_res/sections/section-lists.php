@@ -15,7 +15,7 @@ $args = array(
 ?>
 
 <section id="lists" class="section section--lists">
-  <div class="neon-circle">
+  <div class="neon-circle" data-aos="fade-up">
     <img src="<?php echo get_template_directory_uri(); ?>/dist/img/soft.svg" alt="Soft Skills section">
     <!-- <div class="line">&nbsp;</div> -->
   </div>

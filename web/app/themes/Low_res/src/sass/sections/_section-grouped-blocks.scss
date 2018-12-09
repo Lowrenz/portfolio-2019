@@ -12,23 +12,25 @@
     .material-icons{
         position: absolute;
         top: -5.25rem;
-        right: -5.25rem;
+        right: -20px;
 
         -webkit-transition: .3s ease-in-out;
         transition: .3s ease-in-out;
-        -webkit-animation: pulsate-fwd 3s ease-in-out infinite both;
-        animation: pulsate-fwd 3s ease-in-out infinite both;
 
-        /* Small only */
-        @media screen and (max-width: 39.9375em) {
+        /* Small and medium only */
+        @media screen and (max-width: 63.9375em) {
             top: -3rem;
-            right: -3rem;
         }
 
-        /* Medium only */
-        @media screen and (min-width: 40em) and (max-width: 63.9375em) {
-            top: -4rem;
-            right: -4rem;
+        // Large up
+        @media screen and (min-width: 64em){
+            -webkit-animation: pulsate-fwd 3s ease-in-out infinite both;
+            animation: pulsate-fwd 3s ease-in-out infinite both;
+        }
+
+        // XL up
+        @media screen and (min-width: 90em){
+            right: -5.25rem;
         }
     }
 }

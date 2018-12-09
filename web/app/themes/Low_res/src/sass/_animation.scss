@@ -115,8 +115,11 @@
 }
 
 .pulsate {
-    -webkit-animation: pulsate-fwd 2s ease-in-out infinite both;
-    animation: pulsate-fwd 2s ease-in-out infinite both;
+    // Only do this pulse for large screens
+    @media screen and (min-width: 75em){
+        -webkit-animation: pulsate-fwd 2s ease-in-out infinite both;
+        animation: pulsate-fwd 2s ease-in-out infinite both;
+    }
 }
 
 @-webkit-keyframes pulsate-once {
@@ -313,43 +316,99 @@
 
 
 @-webkit-keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
 }
 
 @-moz-keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
 }
 
 @keyframes Gradient {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
+    0% {
+        background-position: 0% 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    100% {
+        background-position: 0% 50%
+    }
 }
 
-.gradient-animation{
+.gradient-animation {
     -webkit-animation: Gradient 15s ease infinite;
-	-moz-animation: Gradient 15s ease infinite;
-	animation: Gradient 15s ease infinite;
+    -moz-animation: Gradient 15s ease infinite;
+    animation: Gradient 15s ease infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+.typing {
+    -webkit-animation: typing 3.5s ease infinite;
+    -moz-animation: typing 3.5s ease infinite;
+    animation: typing 3.5s ease infinite;
+}
+
+/* The typewriter cursor effect */
+@keyframes blinking-cursor {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: $pink;
+    }
+}
+
+.blinking-cursor {
+    -webkit-animation: blinking-cursor .5s ease infinite;
+    -moz-animation: blinking-cursor .5s ease infinite;
+    animation: blinking-cursor .5s ease infinite;
+}
+
+.typewriter > p{
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  //border-right: .15em solid transparent; /* The typwriter cursor */
+  //white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+
+  // Animation only for really large
+  @media screen and (min-width: 90em){
+    animation: 
+    typing 5s steps(45, end) infinite;
+    animation-delay: 2s;
+  }
 }
