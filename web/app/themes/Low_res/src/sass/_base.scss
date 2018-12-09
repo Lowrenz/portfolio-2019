@@ -58,6 +58,7 @@ body {
     background-size: 100%;
     color: $white;
     padding: 40px;
+    position: relative;
 }
 
 body.lock {
@@ -131,7 +132,9 @@ body.lock {
 
     @include word-wrap();
 
-    &:hover, &:focus, &:active{
+    &:hover,
+    &:focus,
+    &:active {
         transform: translate(14px, 0);
         transition: .3s ease-in-out;
         background-color: $purple;
@@ -238,16 +241,19 @@ address {
     }
 }
 
-.link, a:not(.button){
+.link,
+a:not(.button) {
     transition: .3s ease-in-out;
+
     &:hover,
     &:active,
     &:visited {
         color: $pink;
         transition: .3s ease-in-out;
         text-decoration: none;
-        
-        &.pink, &.purple{
+
+        &.pink,
+        &.purple {
             color: $white;
         }
     }
@@ -280,4 +286,73 @@ address {
     transform: translateZ(0);
     -webkit-animation: load6 1.7s infinite ease, round 1.7s infinite ease;
     animation: load6 1.7s infinite ease, round 1.7s infinite ease;
+}
+
+.neon-circle {
+    position: sticky;
+    top: 170px;
+    // background-color: $purple;
+    // border-radius: 200px;
+
+    .line {
+        width: 5px;
+        left: 134px;
+        margin-top: -5px;
+        display: block;
+        height: 100vh;
+        background-color: #DBFFFF;
+        position: absolute;
+    }
+
+    &:after{
+        content: '';
+        display: block;
+        width: 161px;
+        height: 161px;
+        background-color: $purple;
+        position: absolute;
+        top: 53px;
+        left: 53px;
+        z-index: -1;
+        border-radius: 200px;
+    }
+}
+
+// Line for the section and neon circle
+#about, #services, #skills, #lists, #work, #contact, footer section.section{
+    &:after{
+        content: '';
+        width: 5px;
+        left: 136px;
+        top: 0;
+        display: block;
+        height: 100%;
+        background-color: #DBFFFF;
+        position: absolute;
+        z-index: -10;
+    }
+}
+
+// Every section has 100px margin bottom, this :before connects the lines between sections
+
+#services, #skills, #lists, #work, #contact, footer section.section{
+    &:before{
+        content: '';
+        width: 5px;
+        left: 136px;
+        top: -100px;
+        display: block;
+        height: 100px;
+        background-color: #DBFFFF;
+        position: absolute;
+        z-index: -10;
+    }
+}
+
+// Override for first line that should start a little bit lower (under neon circle)
+#about{
+    &:after{
+        top: 247px;
+        height: calc(#{"100% - 247px"});
+    }
 }

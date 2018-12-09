@@ -15,7 +15,10 @@ $args = array(
 ?>
 
 <section id="lists" class="section section--lists">
-
+  <div class="neon-circle">
+    <img src="<?php echo get_template_directory_uri(); ?>/dist/img/soft.svg" alt="Soft Skills section">
+    <!-- <div class="line">&nbsp;</div> -->
+  </div>
   <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
   <div class="row list-item" data-aos="fade-up">
     <div class="small-3 columns align-self-middle">
