@@ -19,12 +19,19 @@ $args = array(
     <img src="<?php echo get_template_directory_uri(); ?>/dist/img/services.svg" alt="Services section">
     <!-- <div class="line">&nbsp;</div> -->
   </div>
+    <div class="category-nav">
+      <span class="material-icons white back" data-category-active="Back">arrow_back</span>
+      <span class="category white active" data-category-active="Design">Design</span>
+      <span class="category white hidden" data-category-active="Design">Development</span>
+      <span class="category white hidden" data-category-active="online-presence">Online Presence</span>
+      <span class="material-icons white next" data-category-active="Next">arrow_forward</span>
+    </div>
   <div class="row">
     <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
     <div class="small-12 columns pink-after box" data-category="<?php the_field('category'); ?>" data-aos="fade-up">
       <span class="hidden">
         <?php the_title();  ?></span>
-      <span class="material-icons white text-shadow big">
+      <span class="material-icons white text-shadow big animated">
         <?php the_field('icon'); ?></span>
       <p>
         <?php the_content(); ?>

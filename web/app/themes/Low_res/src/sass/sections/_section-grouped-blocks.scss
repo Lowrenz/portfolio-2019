@@ -9,6 +9,62 @@
         -moz-transition: transform 0.3s;
         -o-transition: transform 0.3s;
     }
+
+    .category-nav{
+        background-color: $purple;
+        color: $white;
+        padding: 20px 60px;
+        display: block;
+        height: 120px;
+        width: 57%;
+        margin: -190px auto 190px auto;
+        overflow: hidden;
+        position: sticky;
+        z-index: 20;
+        top: 273px;
+
+        .back, .next, .category{
+            font-size: 66px;
+            overflow: hidden;
+            display: block;
+            position: absolute;
+            top: 0;
+
+            &.hidden{ display: none; }
+            &.active{ display: block; }
+        }
+
+        .back, .next{
+            transition: .3s ease-in-out;
+            &:hover{
+                cursor: pointer;
+                transform: scale(1.05);
+                transition: .3s ease-in-out;
+            }
+        }
+
+        .back{
+            text-align: left;
+            left: 60px;
+            width: 10%;
+            top: 27px;
+        }
+
+        .category{
+            text-align: center;
+            width: calc(#{"80% - 120px"});
+            left: calc(#{"60px + 10%"});
+            top: 10.5px;
+        }
+
+        .next{
+            text-align: right;
+            width: 10%;
+            right: 60px;
+            top: 27px;
+        }
+    }
+
     .material-icons{
         position: absolute;
         top: -5.25rem;
@@ -24,8 +80,10 @@
 
         // Large up
         @media screen and (min-width: 64em){
-            -webkit-animation: pulsate-fwd 3s ease-in-out infinite both;
-            animation: pulsate-fwd 3s ease-in-out infinite both;
+            &.animated{
+                -webkit-animation: pulsate-fwd 3s ease-in-out infinite both;
+                animation: pulsate-fwd 3s ease-in-out infinite both;
+            }
         }
 
         // XL up
