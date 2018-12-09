@@ -45,11 +45,13 @@ document.onreadystatechange = () => {
         }
 
         // Scroll function for the nav
-        const changeNav = async (navBar, aboutSectionTop, navBarHeight) => {
+        const changeNav = async (navBar, aboutSectionTop, navBarHeight, headerBar) => {
             if (aboutSectionTop <= navBarHeight + 100) {
                 navBar.className = ('top-nav visible-soft');
+                headerBar.className = ('purple-bg');
             } else {
                 navBar.className = ('top-nav hidden-soft');
+                headerBar.className = ('');
             }
         }
 
@@ -59,6 +61,7 @@ document.onreadystatechange = () => {
 
             // Set the variables
             let navBar = document.querySelector('nav.top-nav'),
+                headerBar = document.querySelector('header')
                 aboutSection = document.getElementById('about'),
                 aboutSectionTop = aboutSection.getBoundingClientRect().top,
                 navBarHeight = navBar.getBoundingClientRect().height;
@@ -67,6 +70,7 @@ document.onreadystatechange = () => {
             variables.push(navBar);
             variables.push(aboutSectionTop);
             variables.push(navBarHeight);
+            variables.push(headerBar);
 
             return variables;
         }
@@ -74,7 +78,7 @@ document.onreadystatechange = () => {
         const initFunction = async () => {
             await gatherVariables().then(
                 async (res) => {
-                    changeNav(res[0], res[1], res[2]);
+                    changeNav(res[0], res[1], res[2], res[3]);
                     addAnimateOnProgress();
                     addPulsateOnNeon();
                 }
