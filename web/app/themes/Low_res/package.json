@@ -33,9 +33,9 @@
   },
   "homepage": "https://github.com/Lowrenz/portfolio-2019#readme",
   "devDependencies": {
-    "@babel/cli": "^7.1.5",
-    "@babel/core": "^7.1.6",
-    "@babel/preset-env": "^7.1.6",
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",
@@ -55,10 +55,10 @@
   },
   "private": true,
   "dependencies": {
-    "@babel/polyfill": "^7.0.0",
+    "@babel/polyfill": "^7.2.5",
     "aos": "^2.3.4",
     "foundation-sites": "^6.5.1",
     "material-icons": "^0.2.3",
-    "npm": "^6.4.1"
+    "npm": "^6.5.0"
   }
 }

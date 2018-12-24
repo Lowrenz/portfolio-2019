@@ -12,7 +12,7 @@ $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' )
       <div class="row">
         <div class="small-12 columns">
           <div class="logo-wrapper">
-            <img class="site-logo pulsate-fwd" src="<?php echo get_template_directory_uri(); ?>/dist/img/lowres-logo.svg">
+            <img class="site-logo" src="<?php echo get_template_directory_uri(); ?>/dist/img/lowres-logo.svg"><!--pulsate-fwd-->
           </div>
         </div>
       </div>
@@ -23,6 +23,11 @@ $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' )
               <?php the_content(); ?>
             </h1>
           </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-12 columns scroll-indication">
+          <div class="mouse"></div>
         </div>
       </div>
     </div>
