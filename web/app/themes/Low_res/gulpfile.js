@@ -97,6 +97,25 @@ gulp.task('compile-vendor-js', gulp.series(
   }
 ));
 
+// Move space invadors to dist
+gulp.task('space-invadors', gulp.series(
+  (done) => {
+    gulp.src(config.src.spaceInvadors)
+      .pipe(babel({
+        presets: ['@babel/env']
+      }).on('error', err))
+      .pipe(concat('space-invadors.min.js'))
+      .pipe(gulp.dest(config.dist.js))
+      .pipe(uglify().on('error', err))
+      .pipe(gulp.dest(config.dist.js))
+      .pipe(stripDebug())
+      .pipe(browserSync.reload({
+        stream: true
+      }));
+    done();
+  }
+));
+
 //compile app.js file
 gulp.task('compile-app-js', gulp.series(
   (done) => {
@@ -154,29 +173,35 @@ let err = (error) => {
 gulp.task('build', gulp.parallel(
   'move-fonts',
   'compile-vendor-js',
+  'space-invadors',
   'compile-app-js',
   'compile-sass',
   'optimize-images',
-  (done) => { done(); }
+  (done) => {
+    done();
+  }
 ));
 
 //build function, compiles all resources to dist folder
 gulp.task('build-prod', gulp.parallel(
   'move-fonts',
   'compile-vendor-js',
+  'space-invadors',
   'compile-app-js-prod',
   'compile-sass-prod',
   'optimize-images',
-  (done) => { done(); }
+  (done) => {
+    done();
+  }
 ));
 
 //watch files for file changes
 gulp.task('watch', (done) => {
-    gulp.watch(config.src.appJs, gulp.series('compile-app-js'));
-    gulp.watch(config.src.sassPath, gulp.series('compile-sass'));
-    done();
-  }
-);
+  gulp.watch(config.src.appJs, gulp.series('compile-app-js'));
+  gulp.watch(config.src.spaceInvadors, gulp.series('space-invadors'));
+  gulp.watch(config.src.sassPath, gulp.series('compile-sass'));
+  done();
+});
 
 //Start a local server and serve files
 gulp.task('serve', gulp.series('build', (done) => {
@@ -185,6 +210,7 @@ gulp.task('serve', gulp.series('build', (done) => {
   });
 
   gulp.watch(config.src.appJs, gulp.series('compile-app-js'));
+  gulp.watch(config.src.spaceInvadors, gulp.series('space-invadors'));
   gulp.watch(config.src.sassPath, gulp.series('compile-sass'));
   gulp.watch(config.src.php).on('change', browserSync.reload);
   done();
@@ -193,5 +219,7 @@ gulp.task('serve', gulp.series('build', (done) => {
 //default function
 gulp.task('default', gulp.series(
   'serve', 'watch',
-  (done) => { done(); }
+  (done) => {
+    done();
+  }
 ));

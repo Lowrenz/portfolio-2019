@@ -13,7 +13,9 @@
   <?php wp_head(); ?>
   <?php
     global $post;
-    $post_slug=$post->post_name;
+    if(isset($post)){
+      $post_slug=$post->post_name;
+    }
     ?>
 </head>
 
