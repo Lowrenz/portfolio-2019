@@ -106,20 +106,20 @@
       draw: function() {
   
         if (this.lost) {
-          screen.fillStyle = "rgba(0, 0, 0, 0.03)";
+          screen.fillStyle = "#FF00CB";
           screen.fillRect(0, 0, gameSize.width, gameSize.height);
   
-          screen.font = "55px Lucida Console";
+          screen.font = "60px 'Ailerons', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif";
           screen.textAlign = "center";
           screen.fillStyle = "white";
           screen.fillText("You lost", gameSize.width / 2, gameSize.height / 2);
-          screen.font = "20px Lucida Console";
+          screen.font = "21px 'Ailerons', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif";
           screen.fillText("Points: " + kills, gameSize.width / 2, gameSize.height / 2 + 30);
   
         } else {
           screen.clearRect(0, 0, gameSize.width, gameSize.height);
   
-          screen.font = "10px Lucida Console";
+          screen.font = "12px 'Ailerons', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif";
           screen.textAlign = "right";
           screen.fillText("Points: " + kills, gameSize.width, gameSize.height - 12);
         }
@@ -387,7 +387,7 @@
         loop();
   
       };
-      invaderAsset.src = "//stillh.art/project/spaceInvaders/invader.gif";
+      invaderAsset.src = "../web/app/themes/Low_res/dist/img/invador-pink.svg";
   
     });
   

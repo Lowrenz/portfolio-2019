@@ -61,7 +61,7 @@ document.onreadystatechange = () => {
 
             // Set the variables
             let navBar = document.querySelector('nav.top-nav'),
-                headerBar = document.querySelector('header')
+                headerBar = document.querySelector('header'),
                 aboutSection = document.getElementById('about'),
                 aboutSectionTop = aboutSection.getBoundingClientRect().top,
                 navBarHeight = navBar.getBoundingClientRect().height;
