@@ -119,9 +119,10 @@
         } else {
           screen.clearRect(0, 0, gameSize.width, gameSize.height);
   
-          screen.font = "12px 'Ailerons', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif";
+          screen.font = "21px 'Ailerons', Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif";
           screen.textAlign = "right";
           screen.fillText("Points: " + kills, gameSize.width, gameSize.height - 12);
+          screen.fillStyle = "white";
         }
   
         screen.beginPath();
@@ -397,14 +398,17 @@
     document.getElementById('restart').addEventListener('click', function() {
       initGameStart();
     });
+    document.getElementById('space-invaders').addEventListener('click', function() {
+      initGameStart();
+    });
   
     function initGameStart() {
       if (window.innerWidth > 1200) {
         screen.canvas.width = 1200;
-        screen.canvas.height = 500;
+        screen.canvas.height = 800;
         gameSize = {
           width: 1200,
-          height: 500
+          height: 800
         };
         invaderMultiplier = 3;
         initialOffsetInvader = 420;
