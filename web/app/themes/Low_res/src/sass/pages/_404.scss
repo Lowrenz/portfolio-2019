@@ -1,26 +1,51 @@
 .error404 {
-    #404 {
-        canvas {
-            width: 100%;
+
+    margin-top: 150px;
+
+    @media screen and (max-width: 63.9375em) {
+        margin-top: 220px;
+
+        header{
+            background-color:transparent !important;
         }
 
-        .small {
-            font-size: 2rem;
+        #space-invaders, .m-hide{
+            display: none;
+        }
+    }
+        
+        h1{
             text-align: center;
             width: 100%;
-            padding: 20px;
         }
 
-        #restart,
-        .game-button {
-            font-family: $body-font-family ;
-            font-size: 2rem !important;
-            padding: 15px !important;
-            width: auto;
-            height: auto;
-            background-color: $purple-bg;
-            color: red !important;
+    canvas {
+        width: 100%;
+    }
 
-        }
+    .small {
+        font-size: 2rem !important;
+        text-align: center;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .game-button {
+        font-family: $body-font-family;
+        font-size: 2rem;
+        padding: 15px;
+        width: auto;
+        height: auto;
+        background-color: $purple-bg;
+        color: white;
+        margin: 0px auto;
+        text-align: center;
+
+    }
+
+    #restart {
+        font-size: 2rem;
+        padding: 15px;
+        margin: 0px auto;
     }
 }
