@@ -39,7 +39,7 @@
 }
 
 .row {
-    @media screen and (min-width: 90em){
+    @media screen and (min-width: 90em) {
         max-width: 90em;
     }
 }
@@ -294,15 +294,15 @@ a:not(.button) {
     position: sticky;
     top: 170px;
     z-index: 20;
-    
-    @media screen and (max-width: 63.9375em){
+
+    @media screen and (max-width: 63.9375em) {
         position: relative;
         top: 0;
         width: 274px;
         height: 274px;
         margin: 0px auto 60px auto;
 
-        .line{
+        .line {
             display: none;
         }
     }
@@ -317,7 +317,7 @@ a:not(.button) {
         position: absolute;
     }
 
-    &:after{
+    &:after {
         content: '';
         display: block;
         width: 161px;
@@ -329,15 +329,20 @@ a:not(.button) {
         z-index: -1;
         border-radius: 200px;
 
-        @media screen and (max-width: 63.9375em){
+        @media screen and (max-width: 63.9375em) {
             display: none;
         }
     }
 }
 
 // Line for the section and neon circle
-#about, #services, #skills, #lists, #work, #contact, footer section.section{
-    &:after{
+#about,
+#services,
+#skills,
+#lists,
+#work,
+#contact {
+    &:after {
         content: '';
         width: 5px;
         left: 136px;
@@ -347,7 +352,8 @@ a:not(.button) {
         background-color: #DBFFFF;
         position: absolute;
         z-index: -10;
-        @media screen and (max-width: 63.9375em){
+
+        @media screen and (max-width: 63.9375em) {
             display: none;
         }
     }
@@ -355,8 +361,12 @@ a:not(.button) {
 
 // Every section has 100px margin bottom, this :before connects the lines between sections
 
-#services, #skills, #lists, #work, #contact, footer section.section{
-    &:before{
+#services,
+#skills,
+#lists,
+#work,
+#contact {
+    &:before {
         content: '';
         width: 5px;
         left: 136px;
@@ -366,16 +376,29 @@ a:not(.button) {
         background-color: #DBFFFF;
         position: absolute;
         z-index: -10;
-        @media screen and (max-width: 63.9375em){
+
+        @media screen and (max-width: 63.9375em) {
             display: none;
+        }
+    }
+
+    &>.row {
+        @media screen and (min-width: 64em) {
+            margin-left: 320px;
         }
     }
 }
 
 // Override for first line that should start a little bit lower (under neon circle)
-#about{
-    &:after{
+#about {
+    &:after {
         top: 247px;
         height: calc(#{"100% - 247px"});
+    }
+
+    &>.row {
+        @media screen and (min-width: 64em) {
+            margin-left: 320px;
+        }
     }
 }
